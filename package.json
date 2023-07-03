@@ -1,0 +1,17 @@
+{
+  "name": "proyecto-gestoreate",
+  "version": "1.0.0",
+  "description": "auto gestor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass",
+    "sass:watch": "sass --watch scss/main.scss css/main.css"
+  },
+  "author": "ramses muñoz",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.63.6",
+    "wow.js": "^1.2.2"
+  }
+}
