@@ -1,14 +1,210 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,400;1,500&display=swap");
-html {
-  background-color: black;
+nav {
+  margin: 0;
+  background-color: rgba(20, 20, 20, 0);
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr 1fr;
+  grid-template-rows: 100%;
+  grid-template-areas: "logo link botones";
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+nav .botones-nav {
+  background-color: rgba(20, 20, 20, 0.5490196078);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.5rem;
+}
+nav .botones-nav a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav .botones-nav p {
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  font-family: "roboto", sans-serif;
+  margin: 0;
+  color: lemonchiffon;
+}
+nav .botones-nav:hover {
+  background-color: rgb(15, 15, 15);
+  color: lemonchiffon;
+  border: black solid 1px;
+  transition: all 1s;
+}
+nav .botones-nav:hover p {
+  color: rgb(134, 131, 131);
+  transition: all 1s;
+}
+nav #logo {
+  display: grid;
+  grid-area: logo;
+  display: flex;
+  flex-direction: row;
+}
+nav #link {
+  display: grid;
+  grid-area: link;
+}
+nav #botones {
+  display: grid;
+  grid-area: botones;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+nav #botones div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav #botones div a {
+  width: 90%;
+  height: 90%;
+}
+nav a {
+  display: flex;
+  text-decoration: none;
+  color: lemonchiffon;
+  font-family: "roboto", sans-serif;
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  width: auto;
+  margin: 0;
+  padding: 0;
+}
+nav li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+nav div {
+  width: 100%;
+  height: 100%;
+}
+nav div img {
+  margin: 7px;
+}
+nav div h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 4px;
+  color: lemonchiffon;
+}
+
+header {
+  background-image: url(../img/header/header3.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: grid;
+  padding-left: 2rem;
+  padding-right: 5rem;
+  grid-template-columns: 0.3fr 1fr 1fr;
+  grid-template-rows: 100%;
+  grid-template-areas: "h-col1 h-col2 h-col3";
+  color: white;
+  padding-top: 125px;
+}
+header p {
+  color: whitesmoke;
+}
+header h1 {
+  color: lemonchiffon;
+}
+header #h-col1 {
+  display: grid;
+  grid-area: h-col1;
+  display: flex;
+  justify-content: flex-start;
+}
+header #h-col1 img {
+  width: 250x;
+  height: 250px;
+}
+header #h-col2 {
+  display: grid;
+  grid-area: h-col2;
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 3rem;
+  align-items: flex-start;
+  flex-direction: column;
+}
+header #h-col3 {
+  display: grid;
+  grid-area: h-col3;
+}
+
+header div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  background-color: aquamarine;
+}
+
+footer div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.justify-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "roboto", sans-serif;
+}
+
+body {
+  font-family: "roboto", sans-serif;
+}
+body main div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {
-  color: blue;
+  font-family: "roboto", sans-serif;
+  font-weight: 500;
 }
 
-p {
-  color: red;
+h2 {
+  font-family: "roboto", sans-serif;
+  font-weight: 500;
+}
+
+h3 {
+  font-family: "roboto", sans-serif;
+  font-weight: 500;
+}
+
+.tamaño50-logo {
+  height: 50px;
+  width: 50px;
 }
 
 /*# sourceMappingURL=main.css.map */
