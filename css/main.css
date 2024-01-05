@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,400;1,500&display=swap");
 nav {
   margin: 0;
-  background-color: rgba(20, 20, 20, 0);
+  background-color: rgba(0, 0, 0, 0.3);
   display: grid;
   grid-template-columns: 0.5fr 1.5fr 1fr;
   grid-template-rows: 100%;
@@ -45,7 +45,7 @@ nav .botones-nav:hover p {
   color: rgb(134, 131, 131);
   transition: all 1s;
 }
-nav #logo {
+nav #nav {
   display: grid;
   grid-area: logo;
   display: flex;
@@ -54,6 +54,7 @@ nav #logo {
 nav #link {
   display: grid;
   grid-area: link;
+  display: flex;
 }
 nav #botones {
   display: grid;
@@ -76,20 +77,26 @@ nav a {
   text-decoration: none;
   color: lemonchiffon;
   font-family: "roboto", sans-serif;
+  align-items: center;
+  justify-content: center;
 }
 nav ul {
   display: flex;
   flex-direction: row;
   list-style-type: none;
   width: auto;
-  margin: 0;
+  height: auto;
+  align-items: center;
+  justify-content: center;
   padding: 0;
+  margin: 0;
 }
 nav li {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+  width: 100%;
 }
 
 nav div {
@@ -157,13 +164,32 @@ header div {
 }
 
 footer {
-  background-color: aquamarine;
+  background-color: rgb(0, 0, 0);
+  background-image: url(../img/canva/10.png);
+  background-repeat: no-repeat;
+  color: whitesmoke;
+  display: grid;
+  grid-template-columns: 0.7fr 1.5fr 0.7fr;
+  grid-template-rows: 100%;
+  grid-template-areas: "div-title-1 div-title-2 div-title-3";
 }
-
 footer div {
+  border: red solid 1px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+footer #div-title-1 {
+  display: grid;
+  grid-area: div-title-1;
+}
+footer #div-title-2 {
+  display: grid;
+  grid-area: div-title-2;
+}
+footer #div-title-3 {
+  display: grid;
+  grid-area: div-title-3;
 }
 
 .justify-end {
@@ -171,6 +197,175 @@ footer div {
   justify-content: flex-end;
 }
 
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.justify-start {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.input-css {
+  padding: 4px;
+  font-size: 16px;
+  border-width: 2px;
+  border-color: #CCCCCC;
+  background-color: #FFFFFF;
+  color: #000000;
+  border-style: solid;
+  border-radius: 15px;
+  box-shadow: 0px 0px 3px rgba(66, 66, 66, 0.67);
+  text-shadow: 0px 0px 6px rgba(66, 66, 66, 0);
+}
+
+.input-css:focus {
+  outline: none;
+}
+
+.section1-gestoria {
+  padding-bottom: 20px;
+  margin-top: 10px;
+  height: 100%;
+  background-color: black;
+  display: grid;
+  grid-template-rows: 0.2fr 3fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "title-sec  title-sec  title-sec" "article1 article2 article3";
+}
+.section1-gestoria div img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.section1-gestoria #title-sec {
+  display: grid;
+  grid-area: title-sec;
+  margin: 8px;
+}
+.section1-gestoria #article1 {
+  display: grid;
+  grid-area: article1;
+}
+.section1-gestoria #article2 {
+  display: grid;
+  grid-area: article2;
+}
+.section1-gestoria #article3 {
+  display: grid;
+  grid-area: article3;
+}
+.section1-gestoria .div-img-radio-50 {
+  border-radius: 50%;
+  background-color: white;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.section1-gestoria .article1-sec2 {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 70% 30%;
+  grid-template-areas: "service-img" "sub_title";
+}
+.section1-gestoria .article1-sec2 #service-img {
+  display: grid;
+  grid-area: service-img;
+  margin-top: 20px;
+}
+.section1-gestoria .article1-sec2 #sub_title {
+  display: grid;
+  grid-area: sub_title;
+  margin-top: 20px;
+}
+.section1-gestoria .efecto:hover {
+  background-color: white;
+  font-size: 50px;
+  border: rgb(255, 255, 255) solid 8px;
+  color: rgb(32, 32, 32);
+  border-radius: 10px;
+  transition: all 1s;
+  cursor: pointer;
+}
+.section1-gestoria .article2-sec2 {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 70% 30%;
+  grid-template-areas: "service-img" "sub_title";
+}
+.section1-gestoria .article2-sec2 #service-img {
+  display: grid;
+  grid-area: service-img;
+  margin-top: 20px;
+}
+.section1-gestoria .article2-sec2 #sub_title {
+  display: grid;
+  grid-area: sub_title;
+  margin-top: 20px;
+}
+.section1-gestoria .article3-sec2 {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 70% 30%;
+  grid-template-areas: "service-img" "sub_title";
+}
+.section1-gestoria .article3-sec2 #service-img {
+  display: grid;
+  grid-area: service-img;
+  margin-top: 20px;
+}
+.section1-gestoria .article3-sec2 #sub_title {
+  display: grid;
+  grid-area: sub_title;
+  margin-top: 20px;
+}
+
+.section2-gestoria {
+  margin-top: 10px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  display: grid;
+  grid-template-rows: 0.1fr 1fr;
+  grid-template-columns: 70% 30%;
+  grid-template-areas: "title-sec  title-sec" "div-factura1 div-factura2";
+}
+.section2-gestoria .title-sec {
+  display: grid;
+  grid-area: title-sec;
+  width: 100%;
+}
+.section2-gestoria .div-factura1 {
+  display: grid;
+  grid-area: div-factura1;
+}
+.section2-gestoria .div-factura2 {
+  display: grid;
+  grid-area: div-factura2;
+}
+.section2-gestoria article {
+  border-radius: 10px;
+  box-shadow: 5px 15px 7px 5px rgb(0, 0, 0);
+  color: black;
+  border: black solid 5px;
+  background-color: white;
+}
+.section2-gestoria article h2 {
+  text-align: center;
+}
+.section2-gestoria .div-factura1 {
+  height: 400px;
+  display: grid;
+  grid-template-rows: 10% 10% 10% 10% 10% 10% 10%;
+  grid-template-columns: 80%;
+  grid-template-areas: "title-factura", "razon_social" "dni" "fecha" "archivo" "total" "irpf" "iva" "boton";
+}
 * {
   padding: 0;
   margin: 0;
@@ -180,8 +375,248 @@ footer div {
 
 body {
   font-family: "roboto", sans-serif;
+  display: flex;
+  display: grid;
+  grid-template-rows: 40% 100% 10%;
+  grid-template-columns: 100%;
+  grid-template-areas: "head" "main" "footer";
 }
-body main div {
+body #head {
+  display: grid;
+  grid-area: head;
+}
+body #main {
+  display: grid;
+  grid-area: main;
+}
+body #footer {
+  display: grid;
+  grid-area: footer;
+}
+
+main {
+  background-color: rgb(27, 26, 26);
+  color: whitesmoke;
+  padding-bottom: 8px;
+  display: grid;
+  grid-template-rows: 1fr 1.3fr 1fr;
+  grid-template-columns: 100%;
+  grid-template-areas: "section1-main" "section2-main" "section3-main";
+}
+main section {
+  height: 100%;
+  padding-bottom: 10px;
+}
+main #title-main {
+  display: grid;
+  grid-area: title-main;
+  margin: 8px;
+}
+main #section1-main {
+  display: grid;
+  grid-area: section1-main;
+}
+main #section2-main {
+  display: grid;
+  grid-area: section2-main;
+}
+main #section3-main {
+  display: grid;
+  grid-area: section3-main;
+}
+main .section1 {
+  display: grid;
+  grid-template-rows: 0.2fr 3fr;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  grid-template-areas: "title-sec  title-sec  title-sec" "article1 article2 article3";
+}
+main .section1 #title-sec {
+  display: grid;
+  grid-area: title-sec;
+  margin: 8px;
+  height: auto;
+}
+main .section1 #article1 {
+  display: grid;
+  grid-area: article1;
+}
+main .section1 #article2 {
+  display: grid;
+  grid-area: article2;
+}
+main .section1 #article2 h2 {
+  text-align: center;
+}
+main .section1 #article3 {
+  display: grid;
+  grid-area: article3;
+}
+main .section1 .article1-sec1 {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  justify-content: center;
+}
+main .section1 .article1-sec1 img {
+  width: 100%;
+  height: 100%;
+}
+main .section1 .article2-sec1 {
+  display: flex;
+  justify-content: center;
+  align-content: space-around;
+  text-align: center;
+}
+main .section1 .article3-sec1 ol {
+  list-style-type: upper-latin;
+}
+main .section2 {
+  padding-bottom: 20px;
+  margin-top: 10px;
+  height: 100%;
+  background-color: black;
+  display: grid;
+  grid-template-rows: 0.2fr 3fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "title-sec  title-sec  title-sec" "article1 article2 article3";
+}
+main .section2 div img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+main .section2 #title-sec {
+  display: grid;
+  grid-area: title-sec;
+  margin: 8px;
+}
+main .section2 #article1 {
+  display: grid;
+  grid-area: article1;
+}
+main .section2 #article2 {
+  display: grid;
+  grid-area: article2;
+}
+main .section2 #article3 {
+  display: grid;
+  grid-area: article3;
+}
+main .section2 .div-img-radio-50 {
+  border-radius: 50%;
+  background-color: white;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+main .section2 .article1-sec2 {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 70% 30%;
+  grid-template-areas: "service-img" "sub_title";
+}
+main .section2 .article1-sec2 #service-img {
+  display: grid;
+  grid-area: service-img;
+  margin-top: 20px;
+}
+main .section2 .article1-sec2 #sub_title {
+  display: grid;
+  grid-area: sub_title;
+  margin-top: 20px;
+}
+main .section2 .efecto:hover {
+  background-color: white;
+  font-size: 50px;
+  border: rgb(255, 255, 255) solid 8px;
+  color: rgb(32, 32, 32);
+  border-radius: 10px;
+  transition: all 1s;
+  cursor: pointer;
+}
+main .section2 .article2-sec2 {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 70% 30%;
+  grid-template-areas: "service-img" "sub_title";
+}
+main .section2 .article2-sec2 #service-img {
+  display: grid;
+  grid-area: service-img;
+  margin-top: 20px;
+}
+main .section2 .article2-sec2 #sub_title {
+  display: grid;
+  grid-area: sub_title;
+  margin-top: 20px;
+}
+main .section2 .article3-sec2 {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 70% 30%;
+  grid-template-areas: "service-img" "sub_title";
+}
+main .section2 .article3-sec2 #service-img {
+  display: grid;
+  grid-area: service-img;
+  margin-top: 20px;
+}
+main .section2 .article3-sec2 #sub_title {
+  display: grid;
+  grid-area: sub_title;
+  margin-top: 20px;
+}
+
+.section3 {
+  margin-top: 10px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  display: grid;
+  grid-template-rows: 0.2fr 3fr;
+  grid-template-columns: 25% 25% 25%;
+  grid-template-areas: "title-sec  title-sec  title-sec" "article1 article2 article3";
+}
+.section3 #title-sec {
+  display: grid;
+  grid-area: title-sec;
+  margin: 8px;
+}
+.section3 #article1 {
+  display: grid;
+  grid-area: article1;
+}
+.section3 #article2 {
+  display: grid;
+  grid-area: article2;
+}
+.section3 #article3 {
+  display: grid;
+  grid-area: article3;
+}
+.section3 article {
+  border-radius: 10px;
+  box-shadow: 5px 15px 7px 5px rgb(0, 0, 0);
+  color: black;
+  border: black solid 5px;
+  background-color: white;
+}
+.section3 article h2 {
+  text-align: center;
+}
+article {
+  margin: 8px;
+}
+
+h2 {
+  margin: 0;
+}
+
+div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -205,6 +640,19 @@ h3 {
 .tamaño50-logo {
   height: 50px;
   width: 50px;
+}
+
+.texto_gestoreate {
+  color: lemonchiffon;
+}
+
+.text-title {
+  font-size: 30px;
+  color: lemonchiffon;
+}
+
+.flex {
+  display: flex;
 }
 
 /*# sourceMappingURL=main.css.map */

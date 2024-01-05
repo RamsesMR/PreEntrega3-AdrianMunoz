@@ -70,7 +70,7 @@
     </nav>
 
     <!-- 2. header -->
-    <header>
+    <header id="head">
         <div id="h-col1" class="justify-end">
             <h2>
                 <img src="../img/header/header2.gif" alt="computadora con estadisticas de gestoria">
@@ -79,7 +79,7 @@
         <div id="h-col2">
 
             <h1>
-                <img class="tamaño50-logo" src="../img/favicon/favicon120-oscuro.png" alt="logo gestoreate">ESTOREATE
+                <img class="tamaño50-logo" src="../img/favicon/favicon120-oscuro.png" alt="">ESTOREATE
             </h1>
             <p>El software gratuito que pondra en alza tus finanzas</p>
             <div>
@@ -97,18 +97,256 @@
 
     <!-- 3. main -->
 
-    <main>
-        <div>
-            <h1 class="wow bounceIn">main</h1>
-        </div>
+    <main id="main">
+
+        <!-- titulo main -->
+
+        
+
+        <!-- section 1 -->
+
+
+
+        <section class="section1-gestoria" id="section1-gestoria">
+
+            <div id="title-sec" style="border: yellow solid 1px;">
+                <h2>GESTION DE FACTURA</h2>
+            </div>
+
+            <article class="article1-sec2 efecto" id="article1">
+
+                <div  id="service-img">
+                    <img src="../img/img-prueba.webp" alt="lapiz y papel">
+
+
+
+                </div>
+                <div id="sub_title">
+
+                    <span class="text-title text-center">Cargar factura de Ingreso</span>
+                </div>
+
+
+
+            </article>
+
+
+            <article class="article2-sec2 efecto" id="article2">
+
+                <div  id="service-img">
+
+
+                    <img src="../img/img-prueba.webp" alt="lapiz y papel">
+
+
+                </div>
+                <div id="sub_title">
+                    <span class="text-title text-center">Cargar Factura de Egreso</span>
+                </div>
+
+            </article>
+
+            <article class="article3-sec2 efecto" id="article3">
+
+                <div id="service-img">
+
+
+                    <img src="../img/img-prueba.webp" alt="lapiz y papel">
+
+                </div>
+                <div id="sub_title">
+
+                    <span class="text-title text-center">Generar una Factura</span>
+
+                </div>
+
+            </article>
+
+            
+                
+            </section>
+
+
+        <!-- section 2 -->
+
+        <section class="section2-gestoria" id="section2-main">
+
+            <div class="title-sec" style="border: yellow solid 1px;">
+                <h2>section2</h2>
+            </div>
+
+            <article class="div-factura1" id="div-factura1">
+               
+               
+                <div class="title-factura">
+                    <h1>Factura de Ingreso</h1>
+                </div>
+                
+
+
+                <div class="razon_social justify-start" >
+                    <label for="razon social">Razon Social:</label>
+                    <input type="text" class="input-css" id="razon-social-ingresos">
+                </div>
+        
+                <div class="dni justify-start">
+                    <label for="dni"> DNI/CIF/NIE</label>
+                    <input type="text" class="input-css" id="dni-ingresos">
+                </div>
+        
+                <div class="fecha justify-start">
+                    <label for="Fecha Factura">Fecha Emision Factura</label>
+                    <input type="date" placeholder="Fecha FACTURA" class="input-css" id="fecha-ingresos">
+                </div>
+        
+                <div class="archivo justify-start">
+                    <label for="factura"> SUBIR FOTO/PDF/JPG FACTURA</label>
+                    <input type="file" class="input-css" id="archivo-ingreso">
+                </div>
+        
+                <div class="total justify-start">
+                    <label for="Total Factura"> Total Factura</label>
+                    <input type="number" value="0.0" class="input-css" id="total-ingresos">
+                </div>
+        
+                <div class="irpf justify-start">
+                    <label for="Total irpf"> Total I.R.P.F</label>
+                    <input type="number" name="" value="0.0" class="input-css" id="irpf-ingresos">
+                </div>
+        
+                <div class="iva justify-start">
+                    <label for="Total iva">Total I.V.A</label>
+        
+                    <input type="number" value="0.0" class="input-css" id="iva-ingresos">
+
+                    <select name="impuestos" id="" class="input-css">
+        
+                        <option value="0.21">21%</option>
+        
+                        <option value="0.10">10%</option>
+        
+        
+                    </select>
+                </div>
+
+                <div class="boton">
+                    <button onclick="cargarFactura()"> ENVIAR</button>
+                </div>
+
+                <div class="factura-visual">
+                    <p>aqui ira la factura en tiempo real</p>
+                </div>
+        
+        
+        
+            </article>
+
+           
+
+        </section>
+
+        <!-- section 3 -->
+
+        <section class="section3" id="section3-main">
+
+            <div id="title-sec" style="border: yellow solid 1px;">
+                <h2>section3</h2>
+            </div>
+
+            <article class="div-factura1" id="div-factura1 article1">
+               
+               
+                <div class="title-factura">
+                    <h1>Factura de Ingreso</h1>
+                </div>
+                
+
+
+                <div class="razon_social justify-start" >
+                    <label for="razon social">Razon Social:</label>
+                    <input type="text" class="input-css" id="razon-social-ingresos">
+                </div>
+        
+                <div class="dni justify-start">
+                    <label for="dni"> DNI/CIF/NIE</label>
+                    <input type="text" class="input-css" id="dni-ingresos">
+                </div>
+        
+                <div class="fecha justify-start">
+                    <label for="Fecha Factura">Fecha Emision Factura</label>
+                    <input type="date" placeholder="Fecha FACTURA" class="input-css" id="fecha-ingresos">
+                </div>
+        
+                <div class="archivo justify-start">
+                    <label for="factura"> SUBIR FOTO/PDF/JPG FACTURA</label>
+                    <input type="file" class="input-css" id="archivo-ingreso">
+                </div>
+        
+                <div class="total justify-start">
+                    <label for="Total Factura"> Total Factura</label>
+                    <input type="number" value="0.0" class="input-css" id="total-ingresos">
+                </div>
+        
+                <div class="irpf justify-start">
+                    <label for="Total irpf"> Total I.R.P.F</label>
+                    <input type="number" name="" value="0.0" class="input-css" id="irpf-ingresos">
+                </div>
+        
+                <div class="iva justify-start">
+                    <label for="Total iva">Total I.V.A</label>
+        
+                    <input type="number" value="0.0" class="input-css" id="iva-ingresos">
+
+                    <select name="impuestos" id="" class="input-css">
+        
+                        <option value="0.21">21%</option>
+        
+                        <option value="0.10">10%</option>
+        
+        
+                    </select>
+                </div>
+
+                <div class="boton">
+                    <button onclick="cargarFactura()"> ENVIAR</button>
+                </div>
+
+                <div class="factura-visual">
+                    <p>aqui ira la factura en tiempo real</p>
+                </div>
+        
+        
+        
+            </article>
+
+
+            <!-- article2 -->
+
+            <article id="article2">article2</article>
+
+             <!-- article3 -->
+
+            <article id="article3">article3</article>
+
+        </section>
+
+
+
+
+
+
     </main>
 
 
     <!-- 4. footer -->
-    <footer>
-        <div>
-            <h1>footer</h1>
-        </div>
+    <footer id="footer">
+
+        <div id="div-title-1">logo</div>
+        <div id="div-title-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. adipisicing elit. Laborum sunt
+            quisquam temporibus praesentiuLaborum sunt quisquam temporibus praesentium qui accusantium ipsam sapiente
+            voluptates nesciunt, doloribus facere.</div>
+        <div id="div-title-3">redes</div>
+
     </footer>
 
     <!-- script -->
@@ -122,6 +360,7 @@
     <script>
         new WOW().init();
     </script>
+    <script src="/js/index.js"></script>
 </body>
 
 </html>

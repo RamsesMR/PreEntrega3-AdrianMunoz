@@ -1,7 +1,7 @@
 nav {
     margin: 0;
-    
-    background-color:rgba(20, 20, 20, 0);
+
+    background-color: rgba(0, 0, 0, 0.3);
     display: grid;
     grid-template-columns: 0.5fr 1.5fr 1fr;
     grid-template-rows: 100%;
@@ -12,24 +12,24 @@ nav {
     left: 0;
     right: 0;
 
-    
-    .botones-nav{
-        background-color:#1414148c;
-       border-radius: 2px;
-        
+
+    .botones-nav {
+        background-color: #1414148c;
+        border-radius: 2px;
+
         display: flex;
         align-items: center;
         justify-content: center;
         margin-right: 0.5rem;
-        
-        a{
+
+        a {
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        
-        p{
+
+        p {
             align-items: center;
             justify-content: center;
             font-size: 1.2rem;
@@ -38,7 +38,7 @@ nav {
             margin: 0;
             color: lemonchiffon;
 
-            
+
         }
 
     }
@@ -48,93 +48,102 @@ nav {
         color: lemonchiffon;
         border: black solid 1px;
         transition: all 1s;
-        p{
+
+        p {
             color: rgb(134, 131, 131);
             transition: all 1s;
         }
-       
-        
-     
 
 
-    
-      }
-      
+
+
+
+
+    }
+
 
     //grid area navbar
-    #logo{
+    #nav {
         display: grid;
         grid-area: logo;
         display: flex;
         flex-direction: row;
     }
 
-    #link{
+    #link {
         display: grid;
         grid-area: link;
-        
+        display: flex;
     }
 
 
-    #botones{
+    #botones {
         display: grid;
         grid-area: botones;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
-        div{
+
+        div {
             display: flex;
             justify-content: center;
-            align-items: center; 
-            a{
+            align-items: center;
+
+            a {
                 width: 90%;
                 height: 90%;
-            }      
-        } 
+            }
+        }
     }
+
     a {
         display: flex;
         text-decoration: none;
         color: lemonchiffon;
-       
-        
-     
         font-family: "roboto", sans-serif;
-       
+        align-items: center;
+        justify-content: center;
+
     }
-   
+
 
     ul {
         display: flex;
         flex-direction: row;
         list-style-type: none;
         width: auto;
-        margin: 0;
+        height: auto;
+        align-items: center;
+        justify-content: center;
         padding: 0;
-        
-      
+        margin: 0;
+
+
+
     }
 
     li {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-       align-items: center;
+        align-items: center;
+        width: 100%;
     }
 }
-     //flexbox
-nav div{
+
+//flexbox
+nav div {
 
     width: 100%;
     height: 100%;
-    
-    img{
+
+    img {
         margin: 7px;
     }
-    
-     
-    
-    h1{
+
+
+
+    h1 {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -142,4 +151,3 @@ nav div{
         color: lemonchiffon;
     }
 }
-   
