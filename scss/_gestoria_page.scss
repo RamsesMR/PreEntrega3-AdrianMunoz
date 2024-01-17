@@ -106,7 +106,7 @@
       font-size: 50px;
       border: rgb(255, 255, 255) solid 8px;
       color: $maincolor;
-      border-radius: 10px;
+      
       transition: all 1s;
       cursor: pointer;
     }
@@ -168,6 +168,11 @@
 
   }
 
+  .img-icono{
+    width: 7px;
+    height: 100px;
+  }
+
   
   
 //fin seccion 1 gestoria 
@@ -187,7 +192,7 @@
     grid-template-columns: 70% 30%;
     grid-template-areas:
       "title-sec  title-sec"
-      "div-factura1 div-factura2";
+      "div-factura1 div-factura1";
 
     .title-sec {
       display: grid;
@@ -228,29 +233,49 @@
 
       height: 400px;
       display: grid;
-      grid-template-rows: 10% 10% 10% 10% 10% 10% 10%;
-      grid-template-columns:80% ;
+      grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+      grid-template-columns:100% ;
       grid-template-areas: 
-      "title-factura",
+      "title-factura"
       "razon_social"
       "dni"
       "fecha"
       "archivo"
       "total"
       "irpf"
+      "boton"
       "iva"
-      "boton";
+      "factura-visual"
+      ;
     }
 
 
-    .title-factura{}
-    .nombre{}
-    .dni{}
-    .fecha{}
-    .archivo{}
-    .total{}
-    .irpf{}
-    .iva{}
+    .title-factura{
+      
+      background-color: aquamarine;
+      
+    }
+    .nombre{
+      
+    }
+    .dni{
+    
+    }
+    .fecha{
+      
+    }
+    .archivo{
+    
+    }
+    .total{
+      
+    }
+    .irpf{
+     
+    }
+    .iva{
+      
+    }
 
 
 
@@ -273,24 +298,361 @@
 
 .section3-gestoria{
 
-}
+
+  
+
+    margin-top: 10px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+   justify-content: space-evenly;
+  
+
+    //grid
+    display: grid;
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-columns: 25% 25% 25%;
+   
+
+    grid-template-areas:
+      "title-sec  title-sec  title-sec"
+      "section3-aticle1 section3-aticle2 section3-aticle3";
+
+    .title-sec {
+      display: grid;
+      grid-area: title-sec;
+      margin: 8px;
+
+    }
+
+    .section3-aticle1 {
+      display: grid;
+      grid-area: section3-aticle1;
+    }
+
+    .section3-aticle2 {
+      display: grid;
+      grid-area: section3-aticle2;
+    }
+
+    .section3-aticle3 {
+      display: grid;
+      grid-area: section3-aticle3;
+    }
+
+    //fin grid
+
+    article{ 
+
+      border-radius: 10px;
+      box-shadow:  5px 15px 7px 5px rgb(0, 0, 0);
+      color: black;
+      border: black solid 5px;
+
+      background-color: white;
+      h2{
+        text-align: center;
+      }
+    }
+    
+
+
+  }
+
+  
+// DIV DE FACTURA DE INGRESO --1
+
+  
+  .div-factura1{
+
+    color: black;
+    background-color: white;
+    display: grid;
+    grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns:100% ;
+    grid-template-areas: 
+   
+    "title-factura"
+    "razon_social"
+    "dni"
+    "fecha"
+    "archivo"
+    "total"
+    "irpf"
+    "iva"
+    "boton"
+    "factura-visual";
+
+
+    .title-factura{
+      display: grid;
+      grid-area: title-factura;
+      background-color: green;
+      
+   
+    
+      
+    }
+    .razon_social{
+  
+      display: grid;
+      grid-area: razon_social;
+      
+    }
+    .dni{
+  
+      display: grid;
+      grid-area: dni;
+    
+    }
+    .fecha{
+  
+      display: grid;
+      grid-area: fecha;
+      
+    }
+  
+    .archivo{
+    
+      display: grid;
+      grid-area: archivo;
+  
+    }
+    .total{
+      
+      display: grid;
+      grid-area: total;
+    }
+    .irpf{
+     
+      display: grid;
+      grid-area: irpf;
+    }
+    .iva{
+      
+      display: grid;
+      grid-area: iva;
+    }
+  
+    .boton{
+      
+      display: grid;
+      grid-area: boton;
+    }
+  
+    .factura-visual{
+      
+      display: grid;
+      grid-area: factura-visual;
+      background-color: whitesmoke;
+    }
+
+    
+  
+    
+  }
+
+  //DIV DE FACTURA DE GASTO --2
+  .div-factura2{
+
+    article{border-radius: 20px;}
+    color: black;
+    background-color: whitesmoke;
+    
+    display: grid;
+    grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    grid-template-columns:100%;
+    grid-template-areas: 
+   
+    "title-factura"
+    "razon_social"
+    "dni"
+    "fecha"
+    "archivo"
+    "total"
+    "irpf"
+    "iva"
+    "boton"
+    "factura-visual";
+
+
+    .title-factura{
+      display: grid;
+      grid-area: title-factura;
+      background-color: red;
+      height: 110px;
+      
+      
+      
+    }
+    .razon_social{
+  
+      display: grid;
+      grid-area: razon_social;
+      
+    }
+    .dni{
+  
+      display: grid;
+      grid-area: dni;
+    
+    }
+    .fecha{
+  
+      display: grid;
+      grid-area: fecha;
+      
+    }
+  
+    .archivo{
+    
+      display: grid;
+      grid-area: archivo;
+  
+    }
+    .total{
+      
+      display: grid;
+      grid-area: total;
+    }
+    .irpf{
+     
+      display: grid;
+      grid-area: irpf;
+    }
+    .iva{
+      
+      display: grid;
+      grid-area: iva;
+    }
+  
+    .boton{
+      
+      display: grid;
+      grid-area: boton;
+    }
+  
+    .factura-visual{
+      
+      display: grid;
+      grid-area: factura-visual;
+      background-color: white;
+    }
+
+    
+  
+    
+  }
+
+// DIV DE FACTURA PERSONALIZADA --3
+
+  .div-factura3{
+
+    color: black;
+    background-color: white;
+    border-radius: 3rem;
+    
+    display: grid;
+    grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    grid-template-columns:100% ;
+    grid-template-areas: 
+   
+    "title-factura"
+    "razon_social"
+    "dni"
+    "fecha"
+    "archivo"
+    "total"
+    "irpf"
+    "iva"
+    "boton"
+    "factura-visual";
+
+
+    .title-factura{
+      display: grid;
+      grid-area: title-factura;
+      background-color: blue;
+      
+    }
+    .razon_social{
+  
+      display: grid;
+      grid-area: razon_social;
+      
+    }
+    .dni{
+  
+      display: grid;
+      grid-area: dni;
+    
+    }
+    .fecha{
+  
+      display: grid;
+      grid-area: fecha;
+      
+    }
+  
+    .archivo{
+    
+      display: grid;
+      grid-area: archivo;
+  
+    }
+    .total{
+      
+      display: grid;
+      grid-area: total;
+    }
+    .irpf{
+     
+      display: grid;
+      grid-area: irpf;
+    }
+    .iva{
+      
+      display: grid;
+      grid-area: iva;
+    }
+  
+    .boton{
+      
+      display: grid;
+      grid-area: boton;
+    }
+  
+    .factura-visual{
+      
+      display: grid;
+      grid-area: factura-visual;
+      background-color: whitesmoke;
+     
+    }
+
+    input{
+      width: 100%;
+    }
+  
+    
+  }
+
+
+
+
+
+
+
+
+  .display-none{
+    display: none;
+  }
+
+  
+
+
 
 
 
 
 //div de facturas (ingreso, egreso y personalizada)
-
-.div-factura-ingreso{
-
-}
-
-
-
-
-
-.div-factura-egreso{
-
-}
-.div-generar-factura{
-
-}

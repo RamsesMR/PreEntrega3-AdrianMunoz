@@ -9,6 +9,7 @@ header{
     grid-template-columns: 0.3fr 1fr 1fr;
     grid-template-rows: 100%;
     grid-template-areas: "h-col1 h-col2 h-col3";
+    height: 600px;
     color: white;
     padding-top: 125px;
 
@@ -22,11 +23,12 @@ header{
     }
     
 
-    #h-col1{
+    .h-col1{
         display: grid;
         grid-area: h-col1;
         display: flex;
         justify-content: flex-start;
+        height: 600px;
 
 
         img{
@@ -34,17 +36,18 @@ header{
             height: 250px;
         }
     }
-    #h-col2{
+    .h-col2{
         display: grid;
         grid-area: h-col2;
        display: flex;
        justify-content: flex-start;
        padding-top: 3rem;
+       height: 600px;
        align-items: flex-start;
        flex-direction: column;
       
     }
-    #h-col3{
+    .h-col3{
         display: grid;
         grid-area: h-col3;
     }

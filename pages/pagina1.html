@@ -71,12 +71,12 @@
 
     <!-- 2. header -->
     <header id="head">
-        <div id="h-col1" class="justify-end">
+        <div class="h-col1" class="justify-end">
             <h2>
                 <img src="../img/header/header2.gif" alt="computadora con estadisticas de gestoria">
             </h2>
         </div>
-        <div id="h-col2">
+        <div class="h-col2">
 
             <h1>
                 <img class="tamaño50-logo" src="../img/favicon/favicon120-oscuro.png" alt="">ESTOREATE
@@ -88,7 +88,7 @@
 
 
         </div>
-        <div id="h-col3">
+        <div class="h-col3">
             <h2>header-col3</h2>
         </div>
     </header>
@@ -113,7 +113,14 @@
                 <h2>GESTION DE FACTURA</h2>
             </div>
 
-            <article class="article1-sec2 efecto" id="article1">
+
+
+
+
+
+            <!-- article 1 principalmente visible con efecto   --no--factura-- -->
+
+            <article class="article1-sec2 efecto" onclick="Ocultar()" id="article1">
 
                 <div  id="service-img">
                     <img src="../img/img-prueba.webp" alt="lapiz y papel">
@@ -130,23 +137,189 @@
 
             </article>
 
+            <!-- article 1 principalmente NO VISIBLE  --factura-- -->
 
-            <article class="article2-sec2 efecto" id="article2">
+
+
+
+
+
+
+
+            <article class="div-factura1 display-none" id="factura-ingreso">
+               
+               
+                <div class="title-factura" id="title-factura-ingreso">
+                    <h1>Factura de Ingreso</h1>
+                </div>
+                
+
+
+                <div class="razon_social justify-start" >
+                    <label for="razon social">concepto:</label>
+                    <input type="text" class="input-css" id="concepto-ingresos">
+                </div>
+        
+        
+                <div class="fecha justify-start">
+                    <label for="Fecha Factura">Fecha Emision Factura</label>
+                    <input type="date" placeholder="Fecha FACTURA" class="input-css" id="fecha-ingresos">
+                </div>
+        
+                <!-- <div class="archivo justify-start">
+                    <label for="factura"> SUBIR FOTO/PDF/JPG FACTURA</label>
+                    <input type="file" class="input-css" id="archivo-ingreso">
+                </div> -->
+        
+                <div class="total justify-start">
+                    <label for="Total Factura"> Total Factura</label>
+                    <input type="number" value="0.0" class="input-css" id="total-ingresos">
+                </div>
+        
+                <div class="irpf justify-start">
+                    <label for="Total irpf"> Total I.R.P.F</label>
+                    <input type="number" name="" value="0.0" class="input-css" id="irpf-ingresos">
+                </div>
+        
+                <div class="iva justify-start">
+                    <label for="Total iva">Total I.V.A</label>
+        
+                    <input type="number" value="0.0" class="input-css" id="iva-ingresos">
+
+                    <select name="impuestos" id="" class="input-css">
+        
+                        <option value="0.21">21%</option>
+        
+                        <option value="0.10">10%</option>
+        
+        
+                    </select>
+                </div>
+
+                <div class="boton">
+                   
+                    <button class="btn btn-primary" type="submit" onclick="cargarFacturaIngreso()">Button</button>
+                    
+                    <button class="btn btn-primary" type="submit" onclick="Mostrar()">atras</button>
+                </div>
+
+                
+
+
+                    <hr>
+                    <div class="factura-visual" id="factura-visual"></div>
+
+                    
+                    
+                </div>
+        
+        
+        
+            </article>
+
+
+            <!-- aqui inicia SEGUNDO article que es el div de efecto  NO FACTURA -->
+
+            <article class="article2-sec2 efecto" onclick="Ocultar2()"  id="article2">
 
                 <div  id="service-img">
 
 
-                    <img src="../img/img-prueba.webp" alt="lapiz y papel">
+                    <img class="img-icono" src="../img/img-prueba.webp" alt="lapiz y papel">
 
 
                 </div>
                 <div id="sub_title">
-                    <span class="text-title text-center">Cargar Factura de Egreso</span>
+                    <span class="text-title text-center">Cargar Factura Gasto</span>
                 </div>
 
             </article>
 
-            <article class="article3-sec2 efecto" id="article3">
+
+
+
+
+            <!-- aqui inicia el div de la segunda factura    FACUTARA 2-->
+
+
+
+
+            <article class="div-factura2 display-none" id="factura-gasto">
+               
+               
+                <div class="title-factura" id="title-factura">
+                    <h1>Factura Gasto</h1>
+                </div>
+                
+
+
+                <div class="razon_social justify-start" >
+                    <label for="razon social">concepto:</label>
+                    <input type="text" class="input-css" id="concepto-gasto">
+                </div>
+        
+        
+                <div class="fecha justify-start">
+                    <label for="Fecha Factura">Fecha Emision Factura</label>
+                    <input type="date" placeholder="Fecha FACTURA" class="input-css" id="fecha-gasto">
+                </div>
+        
+        
+                <div class="total justify-start">
+                    <label for="Total Factura"> Total Factura</label>
+                    <input type="number" value="0.0" class="input-css" id="total-gasto">
+                </div>
+        
+                <div class="irpf justify-start">
+                    <label for="Total irpf"> Total I.R.P.F</label>
+                    <input type="number" name="" value="0.0" class="input-css" id="irpf-gasto">
+                </div>
+        
+                <div class="iva justify-start">
+                    <label for="Total iva">Total I.V.A</label>
+        
+                    <input type="number" value="0.0" class="input-css" id="iva-gasto">
+
+                    <select name="impuestos" id="" class="input-css">
+        
+                        <option value="0.21">21%</option>
+        
+                        <option value="0.10">10%</option>
+        
+        
+                    </select>
+                </div>
+
+                <div class="boton">
+                    <button class="btn btn-primary" type="submit" onclick="cargarFacturaGasto()">Button</button>
+                   
+                    <button  class="btn btn-primary" type="submit" onclick="Mostrar2()">atras</button>
+                </div>
+
+                
+                <hr>
+                <div class="factura-visual" id="factura-visual-gasto"></div>
+
+                
+                
+            </div>
+        
+        
+        
+            </article>
+
+
+
+
+
+
+
+
+
+<!-- aqui inicia el article 3 con el div de efecto    NO FACTURA 3-->
+
+
+            <article class="article3-sec2 efecto" onclick="Ocultar3()" id="article3">
 
                 <div id="service-img">
 
@@ -156,11 +329,96 @@
                 </div>
                 <div id="sub_title">
 
-                    <span class="text-title text-center">Generar una Factura</span>
+                    <span class="text-title text-center">Generar una Factura Personalizada</span>
 
                 </div>
 
             </article>
+
+            <!-- aqui inicia la tercera facura (personalizada). -->
+            <!-- esta debera incluar un boton para enviar o compratir la factura -->
+
+
+
+
+
+            <article class="div-factura3 display-none" id="factura-personalizada">
+               
+               
+                <div class="title-factura" id="title-factura">
+                    <h1>Factura Personalizada</h1>
+                </div>
+                
+
+
+                <div class="razon_social justify-start" >
+                    <label for="razon social">Razon Social:</label>
+                    <input type="text" class="input-css" id="razonSocial-Personalizada">
+                </div>
+        
+                <div class="dni justify-start">
+                    <label for="dni"> DNI/CIF/NIE</label>
+                    <input type="text" class="input-css" id="dni-Personalizada">
+                </div>
+        
+                <div class="fecha justify-start">
+                    <label for="Fecha Factura">Fecha Emision Factura</label>
+                    <input type="date" placeholder="Fecha FACTURA" class="input-css" id="fecha-Personalizada">
+                </div>
+        
+            
+        
+                <div class="total justify-start">
+                    <label for="Total Factura"> Total Factura</label>
+                    <input type="number" value="0.0" class="input-css" id="total-Personalizada">
+                </div>
+        
+                <div class="irpf justify-start">
+                    <label for="Total irpf"> Total I.R.P.F</label>
+                    <input type="number" name="" value="0.0" class="input-css" id="irpf-Personalizada">
+                </div>
+        
+                <div class="iva justify-start">
+                    <label for="Total iva">Total I.V.A</label>
+        
+                    <input type="number" value="0.0" class="input-css" id="iva-Personalizada">
+
+                    <select name="impuestos" id="" class="input-css">
+        
+                        <option value="0.21">21%</option>
+        
+                        <option value="0.10">10%</option>
+        
+        
+                    </select>
+                </div>
+
+                <div class="boton justyfy-center">
+                   
+                    <button class="btn btn-primary" type="submit" onclick="cargarFacturaPersonalizada()">Button</button>
+                    <button  class="btn btn-primary" type="submit" onclick="Mostrar3()">Button</button>
+                </div>
+
+                
+                <hr>
+                <div class="factura-visual" id="factura-visual-personalizada"></div>
+
+                
+                
+            </div>
+        
+        
+            </article>
+
+
+
+
+
+
+
+
+
+
 
             
                 
@@ -247,16 +505,24 @@
 
         <!-- section 3 -->
 
-        <section class="section3" id="section3-main">
+        <section class="section3-gestoria" id="section3-main">
 
-            <div id="title-sec" style="border: yellow solid 1px;">
-                <h2>section3</h2>
+
+
+
+            <div class="title-sec" style="border: yellow solid 1px;">
+                <h2>Datos</h2>
             </div>
 
-            <article class="div-factura1" id="div-factura1 article1">
+
+
+
+
+
+            <article class="div-factura1 section3-aticle1" id="factura-ingreso">
                
                
-                <div class="title-factura">
+                <div class="title-factura" id="title-factura">
                     <h1>Factura de Ingreso</h1>
                 </div>
                 
@@ -308,7 +574,8 @@
                 </div>
 
                 <div class="boton">
-                    <button onclick="cargarFactura()"> ENVIAR</button>
+                   
+                    <button  class="btn btn-primary" type="submit" onclick="Ocultar()">Button</button>
                 </div>
 
                 <div class="factura-visual">
@@ -322,11 +589,11 @@
 
             <!-- article2 -->
 
-            <article id="article2">article2</article>
+            <article class="section3-aticle2">article2</article>
 
              <!-- article3 -->
 
-            <article id="article3">article3</article>
+            <article class="section3-aticle3">article3</article>
 
         </section>
 
@@ -361,6 +628,9 @@
         new WOW().init();
     </script>
     <script src="/js/index.js"></script>
+<!-- libreria JS sweetalert -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

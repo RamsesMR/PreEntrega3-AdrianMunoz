@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "sass": "^1.63.6",
+    "sweetalert2": "^11.10.3",
     "wow.js": "^1.2.2"
   }
 }

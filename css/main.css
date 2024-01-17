@@ -124,6 +124,7 @@ header {
   grid-template-columns: 0.3fr 1fr 1fr;
   grid-template-rows: 100%;
   grid-template-areas: "h-col1 h-col2 h-col3";
+  height: 600px;
   color: white;
   padding-top: 125px;
 }
@@ -133,26 +134,28 @@ header p {
 header h1 {
   color: lemonchiffon;
 }
-header #h-col1 {
+header .h-col1 {
   display: grid;
   grid-area: h-col1;
   display: flex;
   justify-content: flex-start;
+  height: 600px;
 }
-header #h-col1 img {
+header .h-col1 img {
   width: 250x;
   height: 250px;
 }
-header #h-col2 {
+header .h-col2 {
   display: grid;
   grid-area: h-col2;
   display: flex;
   justify-content: flex-start;
   padding-top: 3rem;
+  height: 600px;
   align-items: flex-start;
   flex-direction: column;
 }
-header #h-col3 {
+header .h-col3 {
   display: grid;
   grid-area: h-col3;
 }
@@ -210,13 +213,13 @@ footer #div-title-3 {
 
 .input-css {
   padding: 4px;
+  width: 100%;
   font-size: 16px;
-  border-width: 2px;
-  border-color: #CCCCCC;
+  border-color: black(0, 0%, 0%);
   background-color: #FFFFFF;
   color: #000000;
-  border-style: solid;
-  border-radius: 15px;
+  border: black solid 0px 1px 0px 0px;
+  border-radius: 7px;
   box-shadow: 0px 0px 3px rgba(66, 66, 66, 0.67);
   text-shadow: 0px 0px 6px rgba(66, 66, 66, 0);
 }
@@ -286,7 +289,6 @@ footer #div-title-3 {
   font-size: 50px;
   border: rgb(255, 255, 255) solid 8px;
   color: rgb(32, 32, 32);
-  border-radius: 10px;
   transition: all 1s;
   cursor: pointer;
 }
@@ -325,6 +327,11 @@ footer #div-title-3 {
   margin-top: 20px;
 }
 
+.img-icono {
+  width: 7px;
+  height: 100px;
+}
+
 .section2-gestoria {
   margin-top: 10px;
   height: 100%;
@@ -334,7 +341,7 @@ footer #div-title-3 {
   display: grid;
   grid-template-rows: 0.1fr 1fr;
   grid-template-columns: 70% 30%;
-  grid-template-areas: "title-sec  title-sec" "div-factura1 div-factura2";
+  grid-template-areas: "title-sec  title-sec" "div-factura1 div-factura1";
 }
 .section2-gestoria .title-sec {
   display: grid;
@@ -362,10 +369,217 @@ footer #div-title-3 {
 .section2-gestoria .div-factura1 {
   height: 400px;
   display: grid;
-  grid-template-rows: 10% 10% 10% 10% 10% 10% 10%;
-  grid-template-columns: 80%;
-  grid-template-areas: "title-factura", "razon_social" "dni" "fecha" "archivo" "total" "irpf" "iva" "boton";
+  grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  grid-template-columns: 100%;
+  grid-template-areas: "title-factura" "razon_social" "dni" "fecha" "archivo" "total" "irpf" "boton" "iva" "factura-visual";
 }
+.section2-gestoria .title-factura {
+  background-color: aquamarine;
+}
+.section3-gestoria {
+  margin-top: 10px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  display: grid;
+  grid-template-rows: 0.2fr 3fr;
+  grid-template-columns: 25% 25% 25%;
+  grid-template-areas: "title-sec  title-sec  title-sec" "section3-aticle1 section3-aticle2 section3-aticle3";
+}
+.section3-gestoria .title-sec {
+  display: grid;
+  grid-area: title-sec;
+  margin: 8px;
+}
+.section3-gestoria .section3-aticle1 {
+  display: grid;
+  grid-area: section3-aticle1;
+}
+.section3-gestoria .section3-aticle2 {
+  display: grid;
+  grid-area: section3-aticle2;
+}
+.section3-gestoria .section3-aticle3 {
+  display: grid;
+  grid-area: section3-aticle3;
+}
+.section3-gestoria article {
+  border-radius: 10px;
+  box-shadow: 5px 15px 7px 5px rgb(0, 0, 0);
+  color: black;
+  border: black solid 5px;
+  background-color: white;
+}
+.section3-gestoria article h2 {
+  text-align: center;
+}
+
+.div-factura1 {
+  color: black;
+  background-color: white;
+  display: grid;
+  grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 100%;
+  grid-template-areas: "title-factura" "razon_social" "dni" "fecha" "archivo" "total" "irpf" "iva" "boton" "factura-visual";
+}
+.div-factura1 .title-factura {
+  display: grid;
+  grid-area: title-factura;
+  background-color: green;
+}
+.div-factura1 .razon_social {
+  display: grid;
+  grid-area: razon_social;
+}
+.div-factura1 .dni {
+  display: grid;
+  grid-area: dni;
+}
+.div-factura1 .fecha {
+  display: grid;
+  grid-area: fecha;
+}
+.div-factura1 .archivo {
+  display: grid;
+  grid-area: archivo;
+}
+.div-factura1 .total {
+  display: grid;
+  grid-area: total;
+}
+.div-factura1 .irpf {
+  display: grid;
+  grid-area: irpf;
+}
+.div-factura1 .iva {
+  display: grid;
+  grid-area: iva;
+}
+.div-factura1 .boton {
+  display: grid;
+  grid-area: boton;
+}
+.div-factura1 .factura-visual {
+  display: grid;
+  grid-area: factura-visual;
+  background-color: whitesmoke;
+}
+
+.div-factura2 {
+  color: black;
+  background-color: whitesmoke;
+  display: grid;
+  grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  grid-template-columns: 100%;
+  grid-template-areas: "title-factura" "razon_social" "dni" "fecha" "archivo" "total" "irpf" "iva" "boton" "factura-visual";
+}
+.div-factura2 article {
+  border-radius: 20px;
+}
+.div-factura2 .title-factura {
+  display: grid;
+  grid-area: title-factura;
+  background-color: red;
+  height: 110px;
+}
+.div-factura2 .razon_social {
+  display: grid;
+  grid-area: razon_social;
+}
+.div-factura2 .dni {
+  display: grid;
+  grid-area: dni;
+}
+.div-factura2 .fecha {
+  display: grid;
+  grid-area: fecha;
+}
+.div-factura2 .archivo {
+  display: grid;
+  grid-area: archivo;
+}
+.div-factura2 .total {
+  display: grid;
+  grid-area: total;
+}
+.div-factura2 .irpf {
+  display: grid;
+  grid-area: irpf;
+}
+.div-factura2 .iva {
+  display: grid;
+  grid-area: iva;
+}
+.div-factura2 .boton {
+  display: grid;
+  grid-area: boton;
+}
+.div-factura2 .factura-visual {
+  display: grid;
+  grid-area: factura-visual;
+  background-color: white;
+}
+
+.div-factura3 {
+  color: black;
+  background-color: white;
+  border-radius: 3rem;
+  display: grid;
+  grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  grid-template-columns: 100%;
+  grid-template-areas: "title-factura" "razon_social" "dni" "fecha" "archivo" "total" "irpf" "iva" "boton" "factura-visual";
+}
+.div-factura3 .title-factura {
+  display: grid;
+  grid-area: title-factura;
+  background-color: blue;
+}
+.div-factura3 .razon_social {
+  display: grid;
+  grid-area: razon_social;
+}
+.div-factura3 .dni {
+  display: grid;
+  grid-area: dni;
+}
+.div-factura3 .fecha {
+  display: grid;
+  grid-area: fecha;
+}
+.div-factura3 .archivo {
+  display: grid;
+  grid-area: archivo;
+}
+.div-factura3 .total {
+  display: grid;
+  grid-area: total;
+}
+.div-factura3 .irpf {
+  display: grid;
+  grid-area: irpf;
+}
+.div-factura3 .iva {
+  display: grid;
+  grid-area: iva;
+}
+.div-factura3 .boton {
+  display: grid;
+  grid-area: boton;
+}
+.div-factura3 .factura-visual {
+  display: grid;
+  grid-area: factura-visual;
+  background-color: whitesmoke;
+}
+.div-factura3 input {
+  width: 100%;
+}
+
+.display-none {
+  display: none;
+}
+
 * {
   padding: 0;
   margin: 0;
