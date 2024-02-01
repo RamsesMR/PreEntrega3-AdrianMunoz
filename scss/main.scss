@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,400;1,500&display=swap');
 
+
 @import "_var";
 @import "_nav";
 @import "_header";
@@ -22,11 +23,13 @@
 body {
   font-family: "roboto", sans-serif;
   display: flex;
+ 
+ 
 
   //grid body
 
   display: grid;
-  grid-template-rows: 40% 100% 10%;
+ // grid-template-rows: 1fr 5fr 0.5fr;
   grid-template-columns: 100%;
   grid-template-areas:
 
@@ -429,11 +432,7 @@ main {
         text-align: center;
       }
     }
-    .article1-sec3 {}
-
-    .article2-sec3 {}
-
-    .article3-sec3 {}
+    
 
   }
 
@@ -443,10 +442,7 @@ main {
 
   //grid-article
 
-  article {
-    
-    margin: 8px;
-  }
+ 
 
 
 

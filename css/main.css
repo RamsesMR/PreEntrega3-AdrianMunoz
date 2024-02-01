@@ -16,24 +16,13 @@ nav {
 nav .botones-nav {
   background-color: rgba(20, 20, 20, 0.5490196078);
   border-radius: 2px;
+  color: white;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 0.5rem;
-}
-nav .botones-nav a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-nav .botones-nav p {
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  padding: 0.5rem;
-  font-family: "roboto", sans-serif;
-  margin: 0;
-  color: lemonchiffon;
 }
 nav .botones-nav:hover {
   background-color: rgb(15, 15, 15);
@@ -119,14 +108,12 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
   display: grid;
-  padding-left: 2rem;
-  padding-right: 5rem;
   grid-template-columns: 0.3fr 1fr 1fr;
   grid-template-rows: 100%;
   grid-template-areas: "h-col1 h-col2 h-col3";
-  height: 600px;
+  height: 513px;
   color: white;
-  padding-top: 125px;
+  padding-top: 50px;
 }
 header p {
   color: whitesmoke;
@@ -139,7 +126,6 @@ header .h-col1 {
   grid-area: h-col1;
   display: flex;
   justify-content: flex-start;
-  height: 600px;
 }
 header .h-col1 img {
   width: 250x;
@@ -151,7 +137,6 @@ header .h-col2 {
   display: flex;
   justify-content: flex-start;
   padding-top: 3rem;
-  height: 600px;
   align-items: flex-start;
   flex-direction: column;
 }
@@ -229,14 +214,11 @@ footer #div-title-3 {
 }
 
 .section1-gestoria {
-  padding-bottom: 20px;
-  margin-top: 10px;
-  height: 100%;
   background-color: black;
   display: grid;
   grid-template-rows: 0.2fr 3fr;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas: "title-sec  title-sec  title-sec" "article1 article2 article3";
+  grid-template-areas: "title-sec title-sec title-sec" "article1 article2 article3";
 }
 .section1-gestoria div img {
   height: 100%;
@@ -336,28 +318,51 @@ footer #div-title-3 {
   margin-top: 10px;
   height: 100%;
   width: 100%;
-  display: flex;
   justify-content: space-evenly;
   display: grid;
   grid-template-rows: 0.1fr 1fr;
-  grid-template-columns: 70% 30%;
-  grid-template-areas: "title-sec  title-sec" "div-factura1 div-factura1";
+  grid-template-columns: 100%;
+  grid-template-areas: "title-sec " "article-section2";
 }
 .section2-gestoria .title-sec {
   display: grid;
   grid-area: title-sec;
   width: 100%;
 }
-.section2-gestoria .div-factura1 {
+.section2-gestoria .article-section2 {
   display: grid;
-  grid-area: div-factura1;
+  grid-area: article-section2;
+  grid-template-rows: 0.1fr 1fr;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-areas: "title-art1 title-art2 title-art3" "dato-usuario dato-factura dato-factura-visual";
 }
-.section2-gestoria .div-factura2 {
+.section2-gestoria .article-section2 .title-art1 {
   display: grid;
-  grid-area: div-factura2;
+  grid-area: title-art1;
+}
+.section2-gestoria .article-section2 .title-art2 {
+  display: grid;
+  grid-area: title-art2;
+}
+.section2-gestoria .article-section2 .title-art3 {
+  display: grid;
+  grid-area: title-art3;
+}
+.section2-gestoria .article-section2 .dato-usuario {
+  display: grid;
+  grid-area: dato-usuario;
+  justify-content: flex-start;
+}
+.section2-gestoria .article-section2 .dato-factura {
+  display: grid;
+  grid-area: dato-factura;
+  justify-content: flex-start;
+}
+.section2-gestoria .article-section2 .dato-factura-visual {
+  display: grid;
+  grid-area: dato-factura-visual;
 }
 .section2-gestoria article {
-  border-radius: 10px;
   box-shadow: 5px 15px 7px 5px rgb(0, 0, 0);
   color: black;
   border: black solid 5px;
@@ -366,16 +371,7 @@ footer #div-title-3 {
 .section2-gestoria article h2 {
   text-align: center;
 }
-.section2-gestoria .div-factura1 {
-  height: 400px;
-  display: grid;
-  grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
-  grid-template-columns: 100%;
-  grid-template-areas: "title-factura" "razon_social" "dni" "fecha" "archivo" "total" "irpf" "boton" "iva" "factura-visual";
-}
-.section2-gestoria .title-factura {
-  background-color: aquamarine;
-}
+
 .section3-gestoria {
   margin-top: 10px;
   height: 100%;
@@ -419,30 +415,22 @@ footer #div-title-3 {
   color: black;
   background-color: white;
   display: grid;
-  grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr;
   grid-template-columns: 100%;
-  grid-template-areas: "title-factura" "razon_social" "dni" "fecha" "archivo" "total" "irpf" "iva" "boton" "factura-visual";
+  grid-template-areas: "title-factura" "concepto" "fecha" "total" "irpf" "iva" "boton" "factura-visual";
 }
 .div-factura1 .title-factura {
   display: grid;
   grid-area: title-factura;
   background-color: green;
 }
-.div-factura1 .razon_social {
+.div-factura1 .concepto {
   display: grid;
-  grid-area: razon_social;
-}
-.div-factura1 .dni {
-  display: grid;
-  grid-area: dni;
+  grid-area: concepto;
 }
 .div-factura1 .fecha {
   display: grid;
   grid-area: fecha;
-}
-.div-factura1 .archivo {
-  display: grid;
-  grid-area: archivo;
 }
 .div-factura1 .total {
   display: grid;
@@ -470,22 +458,18 @@ footer #div-title-3 {
   color: black;
   background-color: whitesmoke;
   display: grid;
-  grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  grid-template-rows: 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr;
   grid-template-columns: 100%;
-  grid-template-areas: "title-factura" "razon_social" "dni" "fecha" "archivo" "total" "irpf" "iva" "boton" "factura-visual";
-}
-.div-factura2 article {
-  border-radius: 20px;
+  grid-template-areas: "title-factura" "concepto" "fecha" "total" "irpf" "iva" "boton" "factura-visual";
 }
 .div-factura2 .title-factura {
   display: grid;
   grid-area: title-factura;
   background-color: red;
-  height: 110px;
 }
-.div-factura2 .razon_social {
+.div-factura2 .concepto {
   display: grid;
-  grid-area: razon_social;
+  grid-area: concepto;
 }
 .div-factura2 .dni {
   display: grid;
@@ -524,11 +508,10 @@ footer #div-title-3 {
 .div-factura3 {
   color: black;
   background-color: white;
-  border-radius: 3rem;
   display: grid;
-  grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  grid-template-rows: 0.2fr 0.1fr 0.1fr 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr;
   grid-template-columns: 100%;
-  grid-template-areas: "title-factura" "razon_social" "dni" "fecha" "archivo" "total" "irpf" "iva" "boton" "factura-visual";
+  grid-template-areas: "title-factura" "razon_social" "dni" "fecha" "total" "irpf" "iva" "boton" "factura-visual";
 }
 .div-factura3 .title-factura {
   display: grid;
@@ -546,10 +529,6 @@ footer #div-title-3 {
 .div-factura3 .fecha {
   display: grid;
   grid-area: fecha;
-}
-.div-factura3 .archivo {
-  display: grid;
-  grid-area: archivo;
 }
 .div-factura3 .total {
   display: grid;
@@ -572,12 +551,13 @@ footer #div-title-3 {
   grid-area: factura-visual;
   background-color: whitesmoke;
 }
-.div-factura3 input {
-  width: 100%;
-}
 
 .display-none {
   display: none;
+}
+
+.article1-sec2-gestoria {
+  width: 100%;
 }
 
 * {
@@ -591,7 +571,6 @@ body {
   font-family: "roboto", sans-serif;
   display: flex;
   display: grid;
-  grid-template-rows: 40% 100% 10%;
   grid-template-columns: 100%;
   grid-template-areas: "head" "main" "footer";
 }
@@ -821,9 +800,6 @@ main .section2 .article3-sec2 #sub_title {
 }
 .section3 article h2 {
   text-align: center;
-}
-article {
-  margin: 8px;
 }
 
 h2 {

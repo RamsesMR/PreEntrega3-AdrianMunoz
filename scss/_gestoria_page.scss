@@ -1,283 +1,258 @@
-//main
+//body
 
+//main
 
 //fin main
 
 // seccion 1 gestoria 
 
-.section1-gestoria{
-   
-    padding-bottom: 20px;
-    margin-top: 10px;
-    height: 100%;
-    background-color: black;
+.section1-gestoria {
 
-    div{
 
-      img{
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        border-radius: 50%;
-      }
-      
+
+  background-color: black;
+
+  div {
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 50%;
     }
-   
+
+  }
+
+
+  //grid
+  display: grid;
+  grid-template-rows: 0.2fr 3fr;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  grid-template-areas: "title-sec title-sec title-sec"
+  "article1 article2 article3";
+
+  #title-sec {
+    display: grid;
+    grid-area: title-sec;
+    margin: 8px;
+
+  }
+
+  #article1 {
+    display: grid;
+    grid-area: article1;
+  }
+
+  #article2 {
+    display: grid;
+    grid-area: article2;
+  }
+
+  #article3 {
+    display: grid;
+    grid-area: article3;
+  }
+
+  //fin grid
+
+  .div-img-radio-50 {
+
+
+    border-radius: 50%;
+    background-color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+
+  }
+
+
+  .article1-sec2 {
+
+
+    height: 100%;
+
 
     //grid
     display: grid;
-    grid-template-rows: 0.2fr 3fr;
-    grid-template-columns: 1fr 1fr 1fr;
-
+    grid-template-columns: 100%;
+    grid-template-rows: 70% 30%;
     grid-template-areas:
-      "title-sec  title-sec  title-sec"
-      "article1 article2 article3";
+      "service-img"
+      "sub_title";
 
-    #title-sec {
+    #service-img {
       display: grid;
-      grid-area: title-sec;
-      margin: 8px;
-
+      grid-area: service-img;
+      margin-top: 20px;
     }
 
-    #article1 {
+    #sub_title {
       display: grid;
-      grid-area: article1;
-    }
+      grid-area: sub_title;
 
-    #article2 {
-      display: grid;
-      grid-area: article2;
-    }
-
-    #article3 {
-      display: grid;
-      grid-area: article3;
+      margin-top: 20px;
     }
 
     //fin grid
 
-    .div-img-radio-50{
 
-     
-      border-radius: 50%;
-     background-color: white;
-      margin-left: 10px;
-      margin-right: 10px;
-     
-    }
-
-
-    .article1-sec2 {
-
-      
-      height: 100%;
-
-
-      //grid
-      display: grid;
-      grid-template-columns: 100%;
-      grid-template-rows: 70% 30%;
-      grid-template-areas:
-       "service-img"
-       "sub_title";
-
-       #service-img{
-        display: grid;
-        grid-area: service-img;
-        margin-top: 20px;
-       }
-       #sub_title{
-        display: grid;
-        grid-area: sub_title;
-      
-        margin-top: 20px;
-       }
-
-       //fin grid
-
-
-     
-    }
-
-    .efecto:hover{
-
-      background-color: white;
-      font-size: 50px;
-      border: rgb(255, 255, 255) solid 8px;
-      color: $maincolor;
-      
-      transition: all 1s;
-      cursor: pointer;
-    }
-
-    .article2-sec2 {
-
-      height: 100%;
-
-      
-      //grid
-      display: grid;
-      grid-template-columns: 100%;
-      grid-template-rows: 70% 30%;
-      grid-template-areas:
-       "service-img"
-       "sub_title";
-
-       #service-img{
-        display: grid;
-        grid-area: service-img;
-        margin-top: 20px;
-       }
-       #sub_title{
-        display: grid;
-        grid-area: sub_title;
-    
-        margin-top: 20px;
-       }
-
-       //fin grid
-    }
-
-    .article3-sec2 {
-
-      height: 100%;
-
-       //grid
-      display: grid;
-      grid-template-columns: 100%;
-      grid-template-rows: 70% 30%;
-      grid-template-areas:
-       "service-img"
-       "sub_title";
-
-       #service-img{
-        display: grid;
-        grid-area: service-img;
-        margin-top: 20px;
-       }
-       #sub_title{
-        display: grid;
-        grid-area: sub_title;
-        
-        margin-top: 20px;
-       }
-
-       //fin grid
-    }
 
   }
 
-  .img-icono{
-    width: 7px;
-    height: 100px;
+  .efecto:hover {
+
+    background-color: white;
+    font-size: 50px;
+    border: rgb(255, 255, 255) solid 8px;
+    color: $maincolor;
+
+    transition: all 1s;
+    cursor: pointer;
   }
 
-  
-  
+  .article2-sec2 {
+
+    height: 100%;
+
+
+    //grid
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 70% 30%;
+    grid-template-areas:
+      "service-img"
+      "sub_title";
+
+    #service-img {
+      display: grid;
+      grid-area: service-img;
+      margin-top: 20px;
+    }
+
+    #sub_title {
+      display: grid;
+      grid-area: sub_title;
+
+      margin-top: 20px;
+    }
+
+    //fin grid
+  }
+
+  .article3-sec2 {
+
+    height: 100%;
+
+    //grid
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 70% 30%;
+    grid-template-areas:
+      "service-img"
+      "sub_title";
+
+    #service-img {
+      display: grid;
+      grid-area: service-img;
+      margin-top: 20px;
+    }
+
+    #sub_title {
+      display: grid;
+      grid-area: sub_title;
+
+      margin-top: 20px;
+    }
+
+    //fin grid
+  }
+
+}
+
+.img-icono {
+  width: 7px;
+  height: 100px;
+}
+
+
+
 //fin seccion 1 gestoria 
 
-.section2-gestoria{
+.section2-gestoria {
+
+
 
   margin-top: 10px;
-    height: 100%;
-    width: 100%;
-    display: flex;
-   justify-content: space-evenly;
-  
+  height: 100%;
+  width: 100%;
 
-    //grid
+  justify-content: space-evenly;
+
+
+  //grid
+  display: grid;
+  grid-template-rows: 0.1fr 1fr;
+  grid-template-columns: 100%;
+  grid-template-areas:
+    "title-sec "
+    "article-section2";
+
+  .title-sec {
     display: grid;
+    grid-area: title-sec;
+    width: 100%;
+
+
+  }
+
+  .article-section2 {
+    display: grid;
+    grid-area: article-section2;
+    
+
+    //grid article
+
     grid-template-rows: 0.1fr 1fr;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 33% 33% 33%;
     grid-template-areas:
-      "title-sec  title-sec"
-      "div-factura1 div-factura1";
+      "title-art1 title-art2 title-art3"
+      "dato-usuario dato-factura dato-factura-visual";
 
-    .title-sec {
+
+    .title-art1 {
       display: grid;
-      grid-area: title-sec;
-      width: 100%;
+      grid-area: title-art1;
+    }
+
+    .title-art2 {
+      display: grid;
+      grid-area: title-art2;
+    }
+
+    .title-art3 {
+      display: grid;
+      grid-area: title-art3;
+    }
+
+    .dato-usuario {
+      display: grid;
+      grid-area: dato-usuario;
+      justify-content: flex-start;
      
      
     }
 
-    .div-factura1 {
+    .dato-factura {
       display: grid;
-      grid-area: div-factura1;
+      grid-area: dato-factura;
+      justify-content: flex-start;
     }
 
-    .div-factura2 {
+    .dato-factura-visual {
       display: grid;
-      grid-area: div-factura2;
+      grid-area: dato-factura-visual;
     }
-
-   
-
-    //fin grid
-
-    article{ 
-
-      border-radius: 10px;
-      box-shadow:  5px 15px 7px 5px rgb(0, 0, 0);
-      color: black;
-      border: black solid 5px;
-
-      background-color: white;
-      h2{
-        text-align: center;
-      }
-    }
-
-    .div-factura1{
-
-      height: 400px;
-      display: grid;
-      grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
-      grid-template-columns:100% ;
-      grid-template-areas: 
-      "title-factura"
-      "razon_social"
-      "dni"
-      "fecha"
-      "archivo"
-      "total"
-      "irpf"
-      "boton"
-      "iva"
-      "factura-visual"
-      ;
-    }
-
-
-    .title-factura{
-      
-      background-color: aquamarine;
-      
-    }
-    .nombre{
-      
-    }
-    .dni{
-    
-    }
-    .fecha{
-      
-    }
-    .archivo{
-    
-    }
-    .total{
-      
-    }
-    .irpf{
-     
-    }
-    .iva{
-      
-    }
-
-
 
   }
 
@@ -287,6 +262,27 @@
 
 
 
+  //fin grid
+
+  article {
+
+   
+
+    box-shadow: 5px 15px 7px 5px rgb(0, 0, 0);
+    color: black;
+    border: black solid 5px;
+
+    background-color: white;
+
+    h2 {
+      text-align: center;
+    }
+  }
+
+
+
+
+}
 
 
 
@@ -296,87 +292,94 @@
 
 
 
-.section3-gestoria{
 
 
-  
 
-    margin-top: 10px;
-    height: 100%;
-    width: 100%;
-    display: flex;
-   justify-content: space-evenly;
-  
 
-    //grid
+
+
+
+.section3-gestoria {
+
+
+
+
+  margin-top: 10px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+
+
+  //grid
+  display: grid;
+  grid-template-rows: 0.2fr 3fr;
+  grid-template-columns: 25% 25% 25%;
+
+
+  grid-template-areas:
+    "title-sec  title-sec  title-sec"
+    "section3-aticle1 section3-aticle2 section3-aticle3";
+
+  .title-sec {
     display: grid;
-    grid-template-rows: 0.2fr 3fr;
-    grid-template-columns: 25% 25% 25%;
-   
-
-    grid-template-areas:
-      "title-sec  title-sec  title-sec"
-      "section3-aticle1 section3-aticle2 section3-aticle3";
-
-    .title-sec {
-      display: grid;
-      grid-area: title-sec;
-      margin: 8px;
-
-    }
-
-    .section3-aticle1 {
-      display: grid;
-      grid-area: section3-aticle1;
-    }
-
-    .section3-aticle2 {
-      display: grid;
-      grid-area: section3-aticle2;
-    }
-
-    .section3-aticle3 {
-      display: grid;
-      grid-area: section3-aticle3;
-    }
-
-    //fin grid
-
-    article{ 
-
-      border-radius: 10px;
-      box-shadow:  5px 15px 7px 5px rgb(0, 0, 0);
-      color: black;
-      border: black solid 5px;
-
-      background-color: white;
-      h2{
-        text-align: center;
-      }
-    }
-    
-
+    grid-area: title-sec;
+    margin: 8px;
 
   }
 
-  
+  .section3-aticle1 {
+    display: grid;
+    grid-area: section3-aticle1;
+  }
+
+  .section3-aticle2 {
+    display: grid;
+    grid-area: section3-aticle2;
+  }
+
+  .section3-aticle3 {
+    display: grid;
+    grid-area: section3-aticle3;
+  }
+
+  //fin grid
+
+  article {
+
+    border-radius: 10px;
+    box-shadow: 5px 15px 7px 5px rgb(0, 0, 0);
+    color: black;
+    border: black solid 5px;
+
+    background-color: white;
+
+    h2 {
+      text-align: center;
+    }
+  }
+
+
+
+}
+
+
 // DIV DE FACTURA DE INGRESO --1
 
-  
-  .div-factura1{
 
-    color: black;
-    background-color: white;
-    display: grid;
-    grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-columns:100% ;
-    grid-template-areas: 
-   
+.div-factura1 {
+
+  color: black;
+  background-color: white;
+  display: grid;
+  grid-template-rows: 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr;
+  grid-template-columns: 100%;
+
+  grid-template-areas:
+
     "title-factura"
-    "razon_social"
-    "dni"
+    "concepto"
     "fecha"
-    "archivo"
     "total"
     "irpf"
     "iva"
@@ -384,91 +387,75 @@
     "factura-visual";
 
 
-    .title-factura{
-      display: grid;
-      grid-area: title-factura;
-      background-color: green;
-      
-   
-    
-      
-    }
-    .razon_social{
-  
-      display: grid;
-      grid-area: razon_social;
-      
-    }
-    .dni{
-  
-      display: grid;
-      grid-area: dni;
-    
-    }
-    .fecha{
-  
-      display: grid;
-      grid-area: fecha;
-      
-    }
-  
-    .archivo{
-    
-      display: grid;
-      grid-area: archivo;
-  
-    }
-    .total{
-      
-      display: grid;
-      grid-area: total;
-    }
-    .irpf{
-     
-      display: grid;
-      grid-area: irpf;
-    }
-    .iva{
-      
-      display: grid;
-      grid-area: iva;
-    }
-  
-    .boton{
-      
-      display: grid;
-      grid-area: boton;
-    }
-  
-    .factura-visual{
-      
-      display: grid;
-      grid-area: factura-visual;
-      background-color: whitesmoke;
-    }
-
-    
-  
-    
+  .title-factura {
+    display: grid;
+    grid-area: title-factura;
+    background-color: green;
   }
 
-  //DIV DE FACTURA DE GASTO --2
-  .div-factura2{
+  .concepto {
+    display: grid;
+    grid-area: concepto;
+  }
 
-    article{border-radius: 20px;}
-    color: black;
+  .fecha {
+    display: grid;
+    grid-area: fecha;
+
+  }
+
+  .total {
+
+    display: grid;
+    grid-area: total;
+  }
+
+  .irpf {
+
+    display: grid;
+    grid-area: irpf;
+  }
+
+  .iva {
+
+    display: grid;
+    grid-area: iva;
+  }
+
+  .boton {
+
+    display: grid;
+    grid-area: boton;
+  }
+
+  .factura-visual {
+
+    display: grid;
+    grid-area: factura-visual;
     background-color: whitesmoke;
-    
-    display: grid;
-    grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
-    grid-template-columns:100%;
-    grid-template-areas: 
-   
+  }
+
+
+
+
+}
+
+//DIV DE FACTURA DE GASTO --2
+.div-factura2 {
+
+
+  color: black;
+  background-color: whitesmoke;
+
+  display: grid;
+  grid-template-rows: 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr;
+  grid-template-columns: 100%;
+
+  grid-template-areas:
+
     "title-factura"
-    "razon_social"
-    "dni"
+    "concepto"
     "fecha"
-    "archivo"
     "total"
     "irpf"
     "iva"
@@ -476,92 +463,109 @@
     "factura-visual";
 
 
-    .title-factura{
-      display: grid;
-      grid-area: title-factura;
-      background-color: red;
-      height: 110px;
-      
-      
-      
-    }
-    .razon_social{
-  
-      display: grid;
-      grid-area: razon_social;
-      
-    }
-    .dni{
-  
-      display: grid;
-      grid-area: dni;
-    
-    }
-    .fecha{
-  
-      display: grid;
-      grid-area: fecha;
-      
-    }
-  
-    .archivo{
-    
-      display: grid;
-      grid-area: archivo;
-  
-    }
-    .total{
-      
-      display: grid;
-      grid-area: total;
-    }
-    .irpf{
-     
-      display: grid;
-      grid-area: irpf;
-    }
-    .iva{
-      
-      display: grid;
-      grid-area: iva;
-    }
-  
-    .boton{
-      
-      display: grid;
-      grid-area: boton;
-    }
-  
-    .factura-visual{
-      
-      display: grid;
-      grid-area: factura-visual;
-      background-color: white;
-    }
 
-    
-  
-    
+  .title-factura {
+    display: grid;
+    grid-area: title-factura;
+    background-color: red;
+
+
+
+
   }
+
+  .concepto {
+
+    display: grid;
+    grid-area: concepto;
+
+
+  }
+
+  .dni {
+
+    display: grid;
+    grid-area: dni;
+
+
+  }
+
+  .fecha {
+
+    display: grid;
+    grid-area: fecha;
+
+
+  }
+
+  .archivo {
+
+    display: grid;
+    grid-area: archivo;
+
+
+  }
+
+  .total {
+
+    display: grid;
+    grid-area: total;
+
+  }
+
+  .irpf {
+
+    display: grid;
+    grid-area: irpf;
+
+  }
+
+  .iva {
+
+    display: grid;
+    grid-area: iva;
+
+  }
+
+  .boton {
+
+    display: grid;
+    grid-area: boton;
+
+  }
+
+  .factura-visual {
+
+    display: grid;
+    grid-area: factura-visual;
+    background-color: white;
+
+  }
+
+
+}
+
+
+
 
 // DIV DE FACTURA PERSONALIZADA --3
 
-  .div-factura3{
+.div-factura3 {
 
-    color: black;
-    background-color: white;
-    border-radius: 3rem;
-    
-    display: grid;
-    grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
-    grid-template-columns:100% ;
-    grid-template-areas: 
-   
+  color: black;
+  background-color: white;
+
+
+  display: grid;
+  grid-template-rows: 0.2fr 0.1fr 0.1fr 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr;
+  grid-template-columns: 100%;
+
+  grid-template-areas:
+
     "title-factura"
     "razon_social"
     "dni"
     "fecha"
-    "archivo"
     "total"
     "irpf"
     "iva"
@@ -569,87 +573,88 @@
     "factura-visual";
 
 
-    .title-factura{
-      display: grid;
-      grid-area: title-factura;
-      background-color: blue;
-      
-    }
-    .razon_social{
-  
-      display: grid;
-      grid-area: razon_social;
-      
-    }
-    .dni{
-  
-      display: grid;
-      grid-area: dni;
-    
-    }
-    .fecha{
-  
-      display: grid;
-      grid-area: fecha;
-      
-    }
-  
-    .archivo{
-    
-      display: grid;
-      grid-area: archivo;
-  
-    }
-    .total{
-      
-      display: grid;
-      grid-area: total;
-    }
-    .irpf{
-     
-      display: grid;
-      grid-area: irpf;
-    }
-    .iva{
-      
-      display: grid;
-      grid-area: iva;
-    }
-  
-    .boton{
-      
-      display: grid;
-      grid-area: boton;
-    }
-  
-    .factura-visual{
-      
-      display: grid;
-      grid-area: factura-visual;
-      background-color: whitesmoke;
-     
-    }
+  .title-factura {
+    display: grid;
+    grid-area: title-factura;
+    background-color: blue;
 
-    input{
-      width: 100%;
-    }
-  
-    
+
   }
 
+  .razon_social {
 
+    display: grid;
+    grid-area: razon_social;
 
-
-
-
-
-
-  .display-none{
-    display: none;
   }
 
-  
+  .dni {
 
+    display: grid;
+    grid-area: dni;
+
+  }
+
+  .fecha {
+
+    display: grid;
+    grid-area: fecha;
+
+  }
+
+  .total {
+
+    display: grid;
+    grid-area: total;
+  }
+
+  .irpf {
+
+    display: grid;
+    grid-area: irpf;
+  }
+
+  .iva {
+
+    display: grid;
+    grid-area: iva;
+  }
+
+  .boton {
+
+    display: grid;
+    grid-area: boton;
+  }
+
+  .factura-visual {
+
+    display: grid;
+    grid-area: factura-visual;
+    background-color: whitesmoke;
+
+
+  }
+}
+
+
+
+
+
+
+
+
+
+.display-none {
+  display: none;
+}
+
+
+//seccion 2
+
+.article1-sec2-gestoria {
+
+  width: 100%;
+}
 
 
 

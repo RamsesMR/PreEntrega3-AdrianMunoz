@@ -11,8 +11,9 @@
   "author": "ramses muñoz",
   "license": "ISC",
   "dependencies": {
+    "@sweetalert2/theme-dark": "^5.0.16",
     "sass": "^1.63.6",
-    "sweetalert2": "^11.10.3",
+    "sweetalert2": "^11.10.4",
     "wow.js": "^1.2.2"
   }
 }

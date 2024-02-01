@@ -2,16 +2,15 @@ header{
     background-image: url(../img/header/header3.png);
     background-size: cover;
     background-repeat: no-repeat;
-  
     display: grid;
-    padding-left: 2rem;
-    padding-right: 5rem;
+    // padding-left: 2rem;
+    // padding-right: 5rem;
     grid-template-columns: 0.3fr 1fr 1fr;
     grid-template-rows: 100%;
     grid-template-areas: "h-col1 h-col2 h-col3";
-    height: 600px;
+    height: 513px;
     color: white;
-    padding-top: 125px;
+    padding-top: 50px;
 
 
    
@@ -28,7 +27,7 @@ header{
         grid-area: h-col1;
         display: flex;
         justify-content: flex-start;
-        height: 600px;
+     //   height: 600px;
 
 
         img{
@@ -42,7 +41,7 @@ header{
        display: flex;
        justify-content: flex-start;
        padding-top: 3rem;
-       height: 600px;
+     //  height: 600px;
        align-items: flex-start;
        flex-direction: column;
       
