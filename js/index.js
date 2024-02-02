@@ -11,7 +11,9 @@ let totalGasto = 0;
 const arrayFacturasIngreso = [];
 const arrayFacturaGastos = [];
 const arrayFacturaPersonalizada = [];
-const arrayUsuario=[];
+const arrayUsuario = [];
+
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -91,33 +93,25 @@ class FacturaPersonalizada {
 
 
 
- class Usuario{
-     constructor(nombre,apellido,dni,correo,password){
+class Usuario {
+    constructor(nombre, apellido, dni, correo, password, login) {
 
-         this.nombre=nombre;
-         this.apellido=apellido;
-         this.dni=dni;
-         this.correo=correo;
-         this.password=password;
-         totalIngreso;
-         totalIva;
-         totalIrpf;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.dni = dni;
+        this.correo = correo;
+        this.password = password;
+        this.login = login;
+        totalIngreso;
+        totalIva;
+        totalIrpf;
 
-     }
- }
+    }
+}
 
 //creacion de usuario
 
 
-// let nombreEntrada= prompt("Ingrese nombre...");
-
-// let apellidoEntrada = prompt("Ingrese apellido...");
-
-// let dniEntrada= parseInt(prompt("Ingrese dni..."));
-
-// let correoEntrada = prompt("ingrese correo");
-
-// const Usuario1= new Usuario(nombreEntrada,apellidoEntrada,dniEntrada,correoEntrada);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -136,7 +130,7 @@ function cargarFacturaIngreso() {
     //guarda todos los datos de los input de factura de ingreso en un arrays
 
 
-    const facturaIngreso = new FacturaIngreso(concepto, fecha, total.value , irpf.value, iva.value);
+    const facturaIngreso = new FacturaIngreso(concepto, fecha, total.value, irpf.value, iva.value);
 
     arrayFacturasIngreso.push(facturaIngreso);
 
@@ -167,8 +161,8 @@ function cargarFacturaIngreso() {
     p_iva_visual.innerText = "";
     p_total_total_visual.innerText = "";
 
-    
-  
+
+
     // Swal.fire("factura cargada con exito")
 
     const Toast = Swal.mixin({
@@ -178,15 +172,15 @@ function cargarFacturaIngreso() {
         timer: 3000,
         timerProgressBar: true,
         didOpen: (toast) => {
-          toast.onmouseenter = stopTimer;
-          toast.onmouseleave = resumeTimer;
+            toast.onmouseenter = stopTimer;
+            toast.onmouseleave = resumeTimer;
         }
-      });
-      Toast.fire({
+    });
+    Toast.fire({
         icon: "success",
         title: "Factura de ingreso cargada exitosamente"
-      });
-    
+    });
+
 
 
 
@@ -244,14 +238,14 @@ function cargarFacturaGasto() {
         timer: 3000,
         timerProgressBar: true,
         didOpen: (toast) => {
-          toast.onmouseenter = stopTimer;
-          toast.onmouseleave = resumeTimer;
+            toast.onmouseenter = stopTimer;
+            toast.onmouseleave = resumeTimer;
         }
-      });
-      Toast.fire({
+    });
+    Toast.fire({
         icon: "success",
         title: "Factura de gasto cargada exitosamente"
-      });
+    });
 
 
 
@@ -281,7 +275,7 @@ function cargarFacturaPersonalizada() {
     //pasamos el arrays a JSON
     let facturaPersonalizadaJson = JSON.stringify(facturaPersonalizada);
 
-    localStorage.setItem("factura personalizada", facturaPersonalizadaJson)
+    localStorage.setItem("factura personalizada", facturaPersonalizadaJson);
 
     console.log(facturaPersonalizada);
 
@@ -307,14 +301,14 @@ function cargarFacturaPersonalizada() {
         timer: 3000,
         timerProgressBar: true,
         didOpen: (toast) => {
-          toast.onmouseenter = stopTimer;
-          toast.onmouseleave = resumeTimer;
+            toast.onmouseenter = stopTimer;
+            toast.onmouseleave = resumeTimer;
         }
-      });
-      Toast.fire({
+    });
+    Toast.fire({
         icon: "success",
         title: "Factura personalizada cargada exitosamente"
-      });
+    });
 
 
 
@@ -364,8 +358,8 @@ const iva_personalizada = document.getElementById("iva-Personalizada");
 let total_irpf;
 let total_iva;
 
-console.log(`total iva: ${total_iva}` );
-console.log(`total irpf: ${total_irpf}` );
+console.log(`total iva: ${total_iva}`);
+console.log(`total irpf: ${total_irpf}`);
 //creacion de nodos para la factura visual ingreso
 
 let p_razon_social_visual = document.createElement("span");
@@ -405,55 +399,192 @@ let p_total_total_visual_personalizada = document.createElement("span");
 
 //EVENTOS
 
-//boton iniciar seccion
+//boton iniciar sesion
 
 //boton registro
 
- const registroUsuario = document.getElementById("boton-registro");
- const inicioUsuario = document.getElementById("boton-inicio");
+const registroUsuario = document.getElementById("boton-registro");
+const inicioUsuario = document.getElementById("boton-inicio");
 
 
 
- registroUsuario.addEventListener("click", () => {
-   
-  
- 
-       Swal.fire({
-           title: "Registro Usuario",
-           html:`
+registroUsuario.addEventListener("click", () => {
+
+
+
+    Swal.fire({
+        title: "Registro Usuario",
+        html: `
            <input type="text" id="usuario-nombre" placeholder="Nombre" class="swal2-input">
            <input type="text" id="usuario-apellido" placeholder="apellido" class="swal2-input">
            <input type="text" id="usuario-dni" placeholder="dni" class="swal2-input">
            <input type="text" id="usuario-correo" placeholder="Correo Electronico" class="swal2-input">
            <input type="password" id="usuario-password" placeholder="Password" class="swal2-input" >
            `,
-           confirmButtonText: "Registrarme"
-        
-       })
+        confirmButtonText: "Registrarme"
 
-      
-    
-  });
+    }).then((result) => {
+        if (result.isConfirmed) {
+
+            const nombre = document.getElementById("usuario-nombre").value;
+            const apellido = document.getElementById("usuario-apellido").value;
+            const dni = document.getElementById("usuario-dni").value;
+            const correo = document.getElementById("usuario-correo").value;
+            const password = document.getElementById("usuario-password").value;
+
+            let usuario = new Usuario(nombre, apellido, dni, correo, password, false);
+
+            arrayUsuario.push(usuario);
+
+            let usuarioJson = JSON.stringify(usuario);
+
+            localStorage.setItem("Usuario", usuarioJson);
+
+            console.log(arrayUsuario);
+            console.log(usuarioJson);
+
+            Swal.fire({
+                title: "Registrado",
+                text: "Registro completado con exito",
+                icon: "success"
+            })
+
+            console.log(usuario);
+        }
+    })
 
 
- 
+
+});
+
+inicioUsuario.addEventListener("click", () => {
+
+    const usuarioJson = localStorage.getItem("Usuario");
+
+    const usuario = JSON.parse(usuarioJson);
+
+    if (usuario.login === false) {
+
+        Swal.fire({
+            title: "Iniciar Sesion",
+            html: `
+        <input type="text" id="usuario-login" placeholder="correo" class="swal2-input">
+        <input type="password" id="password-login" placeholder="password" class="swal2-input">
+        `,
+            confirmButtonText: "Iniciar Sesion"
+
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                const usuario_login = document.getElementById("usuario-login").value;
+                const password_login = document.getElementById("password-login").value;
 
 
 
+                if (usuario_login === usuario.correo && password_login === usuario.password) {
+
+                    Swal.fire({
+                        title: `Bienvenido  ${usuario.nombre} ${usuario.apellido}`,
+                        icon: "success",
+                    })
+
+                    usuario.login = true;
+
+                    let usuarioJson = JSON.stringify(usuario);
+
+                    localStorage.setItem("Usuario", usuarioJson);
+
+                    console.log(usuario)
+                }
+                else {
+
+                    Swal.fire({
+                        title: `Usuario incorrecto`,
+                        icon: "error",
+                        confirmButtonText: "intentar de nuevo"
+                    }).then((result) => {
+
+                        if (result.isConfirmed) {
 
 
+                            if (usuario.login === false) {
+
+                                Swal.fire({
+                                    title: "Iniciar Sesion",
+                                    html: `
+                        <input type="text" id="usuario-login" placeholder="correo" class="swal2-input">
+                        <input type="password" id="password-login" placeholder="password" class="swal2-input">
+                        `,
+                                    confirmButtonText: "Iniciar Sesion"
+
+                                }).then((result) => {
+
+                                    if (result.isConfirmed) {
+
+                                        const usuario_login = document.getElementById("usuario-login").value;
+                                        const password_login = document.getElementById("password-login").value;
+
+                                        const usuarioJson = localStorage.getItem("Usuario");
+
+                                        const usuario = JSON.parse(usuarioJson);
+
+                                        if (usuario_login === usuario.correo && password_login === usuario.password) {
+
+                                            Swal.fire({
+                                                title: `Bienvenido  ${usuario.nombre} ${usuario.apellido}`,
+                                                icon: "success",
+                                            })
+
+                                            usuario.login = true;
+                                            console.log(usuario)
+                                        }
+                                    }
+                                })
+                            }
+                        }
+                    })
+                }
+            } //segundo if
+        })
 
 
+    }//primer if
+    else {
+        Swal.fire({
+            title: "Ya existe una sesion activa",
+            text: "Para ingresar con otro usuario debera de finalizar sesion",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "finalizar sesion"
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                
+                Swal.fire({
+                    title: "Sesion finalizada",
+                    text: "Te esperamos pronto",
+                    icon: "success"
+                });
+
+                usuario.login = false;
+
+                let usuarioJson = JSON.stringify(usuario);
+
+                    localStorage.setItem("Usuario", usuarioJson);
+                console.log(usuario)
+
+                
+            }
+        });
+    }//else
 
 
-
-
-
-
+})//llave evento
 
 
 //eventos input para que aparezca la factura en tiempo real
-
 
 
 //eventos para factura de ingreso
@@ -562,7 +693,7 @@ contenedor.appendChild(div);
 total_gasto.addEventListener("input", function () {
 
 
-    p_total_visual_gasto.innerText = (parseFloat(total_gasto.value) - parseFloat(iva_gasto.value) - parseFloat(irpf_gasto.value) )+ " $";
+    p_total_visual_gasto.innerText = (parseFloat(total_gasto.value) - parseFloat(iva_gasto.value) - parseFloat(irpf_gasto.value)) + " $";
 
     const span = document.getElementById("total_tiempo_real_gasto");
 
@@ -663,7 +794,7 @@ contenedor2.appendChild(div2);
 //input total bruto
 
 
- total_personalizada.addEventListener("input", () => {
+total_personalizada.addEventListener("input", () => {
 
 
     p_total_visual_personalizada.innerText = (parseFloat(total_personalizada.value) - parseFloat(iva_personalizada.value) - parseFloat(irpf_personalizada.value)) + " $";
@@ -700,14 +831,14 @@ irpf_personalizada.addEventListener("input", () => {
 
     p_total_visual_personalizada.innerText = (parseFloat(total_personalizada.value) - parseFloat(irpf_personalizada.value)) - parseFloat(iva_personalizada.value) + " $";
 
-   
 
-    
+
+
 
     const span = document.getElementById("irpf_tiempo_real_personalizada");
 
     span.appendChild(p_irpf_visual_personalizada);
-    
+
 
     console.log(p_irpf_visual_personalizada);
 
@@ -728,7 +859,7 @@ total_personalizada.addEventListener("input", () => {
     console.log("el total total es: " + p_total_total_visual_personalizada.value);
 
 
-}) 
+})
 
 
 
@@ -753,7 +884,7 @@ div3.innerHTML = `
 
            `;
 
-           
+
 contenedor3.appendChild(div3);
 
 
