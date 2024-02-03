@@ -239,6 +239,35 @@
       display: grid;
       grid-area: dato-usuario;
       justify-content: flex-start;
+
+      grid-template-rows: 0.2fr 0.2fr 0.2fr 0.2fr;
+      grid-template-columns: 100%;
+      grid-template-areas: 
+      "nombre-grid"
+      "apellido-grid"
+      "dni-grid"
+      "correo-grid";
+
+      .nombre-grid{
+
+        display: grid;
+        grid-area: nombre-grid;
+      }
+      .apellido-grid{
+
+        display: grid;
+        grid-area:apellido-grid ;
+      }
+      .dni-grid{
+
+        display: grid;
+        grid-area:dni-grid ;
+      }
+      .correo-grid{
+
+        display: grid;
+        grid-area:correo-grid ;
+      }
      
      
     }
@@ -247,11 +276,65 @@
       display: grid;
       grid-area: dato-factura;
       justify-content: flex-start;
+
+      grid-template-rows: 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr;
+      grid-template-columns: 100%;
+      grid-template-areas: 
+      "totalBruto_grid"
+      "iva_grid"
+      "irpf_grid"
+      "totalDeducciones_grid"
+      "gasto_grid"
+      ;
+
+      .totalBruto_grid{
+        display: grid;
+        grid-area: totalBruto_grid;
+      }
+      .iva_grid{
+        display: grid;
+        grid-area: iva_grid;
+      }
+      .irpf_grid{
+        display: grid;
+        grid-area: irpf_grid;
+      }
+      .totalDeducciones_grid{
+        display: grid;
+        grid-area: totalDeducciones_grid;
+      }
+      .gasto_grid{
+        display: grid;
+        grid-area: gasto_grid;
+      }
     }
 
     .dato-factura-visual {
       display: grid;
       grid-area: dato-factura-visual;
+
+      grid-template-rows: 0.2fr 0.2fr 0.2fr;
+      grid-template-columns: 100%;
+      grid-template-areas: 
+      "gasto_grid"
+      "ingreso_grid"
+      "personalizada_grid"
+      ;
+
+      .gasto_grid{
+        display: grid;
+        grid-area: gasto_grid;
+      }
+      .ingreso_grid{
+        display: grid;
+        grid-area: ingreso_grid;
+      }
+      .personalizada_grid{
+        display: grid;
+        grid-area: personalizada_grid;
+      }
+
+
     }
 
   }
@@ -657,7 +740,11 @@
 }
 
 
-
+.btc{
+  display: flex;
+  flex-direction: row;
+  color: red;
+}
 
 
 //div de facturas (ingreso, egreso y personalizada)

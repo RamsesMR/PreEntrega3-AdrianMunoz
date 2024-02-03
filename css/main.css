@@ -352,15 +352,72 @@ footer #div-title-3 {
   display: grid;
   grid-area: dato-usuario;
   justify-content: flex-start;
+  grid-template-rows: 0.2fr 0.2fr 0.2fr 0.2fr;
+  grid-template-columns: 100%;
+  grid-template-areas: "nombre-grid" "apellido-grid" "dni-grid" "correo-grid";
+}
+.section2-gestoria .article-section2 .dato-usuario .nombre-grid {
+  display: grid;
+  grid-area: nombre-grid;
+}
+.section2-gestoria .article-section2 .dato-usuario .apellido-grid {
+  display: grid;
+  grid-area: apellido-grid;
+}
+.section2-gestoria .article-section2 .dato-usuario .dni-grid {
+  display: grid;
+  grid-area: dni-grid;
+}
+.section2-gestoria .article-section2 .dato-usuario .correo-grid {
+  display: grid;
+  grid-area: correo-grid;
 }
 .section2-gestoria .article-section2 .dato-factura {
   display: grid;
   grid-area: dato-factura;
   justify-content: flex-start;
+  grid-template-rows: 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr;
+  grid-template-columns: 100%;
+  grid-template-areas: "totalBruto_grid" "iva_grid" "irpf_grid" "totalDeducciones_grid" "gasto_grid";
+}
+.section2-gestoria .article-section2 .dato-factura .totalBruto_grid {
+  display: grid;
+  grid-area: totalBruto_grid;
+}
+.section2-gestoria .article-section2 .dato-factura .iva_grid {
+  display: grid;
+  grid-area: iva_grid;
+}
+.section2-gestoria .article-section2 .dato-factura .irpf_grid {
+  display: grid;
+  grid-area: irpf_grid;
+}
+.section2-gestoria .article-section2 .dato-factura .totalDeducciones_grid {
+  display: grid;
+  grid-area: totalDeducciones_grid;
+}
+.section2-gestoria .article-section2 .dato-factura .gasto_grid {
+  display: grid;
+  grid-area: gasto_grid;
 }
 .section2-gestoria .article-section2 .dato-factura-visual {
   display: grid;
   grid-area: dato-factura-visual;
+  grid-template-rows: 0.2fr 0.2fr 0.2fr;
+  grid-template-columns: 100%;
+  grid-template-areas: "gasto_grid" "ingreso_grid" "personalizada_grid";
+}
+.section2-gestoria .article-section2 .dato-factura-visual .gasto_grid {
+  display: grid;
+  grid-area: gasto_grid;
+}
+.section2-gestoria .article-section2 .dato-factura-visual .ingreso_grid {
+  display: grid;
+  grid-area: ingreso_grid;
+}
+.section2-gestoria .article-section2 .dato-factura-visual .personalizada_grid {
+  display: grid;
+  grid-area: personalizada_grid;
 }
 .section2-gestoria article {
   box-shadow: 5px 15px 7px 5px rgb(0, 0, 0);
@@ -558,6 +615,12 @@ footer #div-title-3 {
 
 .article1-sec2-gestoria {
   width: 100%;
+}
+
+.btc {
+  display: flex;
+  flex-direction: row;
+  color: red;
 }
 
 * {

@@ -2,15 +2,11 @@
 //vairiables
 const IVA = 0.21;
 const IRPF = 0.20;
-let totalIngresoBruto = 0;
-let totalIngreso = 0;
-let totalIva = 0;
-let totalIrpf = 0;
-let ok = 0;
-let totalGasto = 0;
 const arrayFacturasIngreso = [];
 const arrayFacturaGastos = [];
 const arrayFacturaPersonalizada = [];
+let ok = 0;
+let totalGasto = 0;
 const arrayUsuario = [];
 
 
@@ -27,17 +23,26 @@ class FacturaIngreso {
         this.total = total;
         this.irpf = irpf;
         this.iva = iva;
+
     }
 
     //metodos de clases
     sumarATotal() {
 
-        totalIngreso += this.neto;
-        totalIva += this.iva;
-        totalIrpf += this.irpf;
-        totalIngresoBruto += this.ingreso;
+        usuario.totalIngreso += parseFloat(this.total);
+        usuario.totalIva += parseFloat(this.iva);
+        usuario.totalIrpf += parseFloat(this.irpf);
+        usuario.totalIngresoBruto += parseFloat(this.total - this.irpf - this.iva);
+        usuario.facturasIngresos += 1;
 
-        console.log("se han cargado los datos de la factura");
+        let usuarioJson = JSON.stringify(usuario);
+
+        localStorage.setItem("Usuario", usuarioJson);
+
+        console.log(usuario.totalIngreso);
+        console.log(usuario.totalIva);
+        console.log(usuario.totalIrpf);
+        console.log(usuario.totalIngresoBruto);
     }
 }
 
@@ -55,12 +60,23 @@ class FacturaGasto {
     //metodos de clases
     sumarATotal() {
 
+        usuario.totalIva -= parseFloat(this.iva);
+        usuario.totalIrpf -= parseFloat(this.irpf);
+        usuario.gastos += parseFloat(this.total);
+        usuario.totalIngresoBruto += (parseFloat(this.irpf) + parseFloat(this.iva));
+        usuario.facturasGastos += 1;
 
-        totalIva -= this.iva;
-        totalIrpf -= this.irpf;
-        totalGasto += this.gasto;
-        totalIngreso += this.deducciones
-        console.log("se han cargado los datos de la factura");
+
+
+        let usuarioJson = JSON.stringify(usuario);
+
+        localStorage.setItem("Usuario", usuarioJson);
+
+        console.log(arrayFacturaGastos);
+        console.log(arrayFacturasIngreso);
+        console.log(arrayFacturaPersonalizada);
+
+
 
     }
 }
@@ -81,10 +97,24 @@ class FacturaPersonalizada {
     sumarATotal() {
 
 
-        totalIva -= this.iva;
-        totalIrpf -= this.irpf;
-        totalGasto += this.gasto;
-        totalIngreso += this.deducciones
+        usuario.totalIngreso += parseFloat(this.total);
+        usuario.totalIva += parseFloat(this.iva);
+        usuario.totalIrpf += parseFloat(this.irpf);
+        usuario.totalIngresoBruto += parseFloat(this.total - this.irpf - this.iva);
+        usuario.facturasPersonalizadas += 1;
+
+        let usuarioJson = JSON.stringify(usuario);
+
+        localStorage.setItem("Usuario", usuarioJson);
+
+        console.log(usuario.totalIngreso);
+        console.log(usuario.totalIva);
+        console.log(usuario.totalIrpf);
+        console.log(usuario.totalIngresoBruto);
+
+
+        
+        
         console.log("se han cargado los datos de la factura");
 
     }
@@ -102,14 +132,91 @@ class Usuario {
         this.correo = correo;
         this.password = password;
         this.login = login;
-        totalIngreso;
-        totalIva;
-        totalIrpf;
+        this.totalIngresoBruto = 0;
+        this.totalIngreso = 0;
+        this.totalIva = 0;
+        this.totalIrpf = 0;
+        this.gastos = 0;
+        this.facturasIngresos = 0;
+        this.facturasGastos = 0;
+        this.facturasPersonalizadas = 0;
+        
 
     }
 }
 
-//creacion de usuario
+//CONSUMO DE APIS
+
+const dolarApi= "https://criptoya.com/api/binancep2p/btc/usd/0.1";
+const div7= document.getElementById("precioDolar");
+
+setInterval(() =>{
+    fetch(dolarApi)
+        .then(response => response.json())
+        .then(({totalBid}) =>{
+
+            
+
+            div7.innerHTML=`
+            
+            <p>Bitcoin : ${totalBid} </p>
+           
+         
+
+            `;    
+        })
+        .catch(error => console.log(error))
+    
+
+
+},3000);
+
+
+const dolarApi2= "https://criptoya.com/api/binancep2p/eth/usd/0.1";
+ 
+
+setInterval(() =>{
+    fetch(dolarApi2)
+        .then(response => response.json())
+        .then(({totalBid}) =>{
+
+            div7.innerHTML+=`
+          
+            <p> ETH : ${totalBid} </p>
+         
+
+            `;    
+        })
+        .catch(error => console.log(error))
+    
+
+
+},3000);
+
+
+
+
+// const dolarApi3= "https://criptoya.com/api/binancep2p/dai/usd/0.1";
+ 
+
+// setInterval(() =>{
+//     fetch(dolarApi3)
+//         .then(response => response.json())
+//         .then(({totalBid}) =>{
+
+//             div7.innerHTML+=`
+           
+//             <p>DAI : ${totalBid}</p>
+         
+
+//             `;    
+//         })
+//         .catch(error => console.log(error))
+    
+
+
+// },1000)
+
 
 
 
@@ -118,6 +225,48 @@ class Usuario {
 
 //FUNCIONES
 
+//FUNCIONES ASINCRONAS
+
+const titulo= document.getElementById("tituloHeader");
+const parrafo = document.getElementById("parrafoHeader");
+
+const textoTitulo = "GESTOREATE";
+const textoParrafo ="El software gratuito que pondra en alza tus finanzas"
+let indice1 = 0;
+let indice2 =0;
+
+function mostrarTitulo(){
+
+  titulo.textContent += textoTitulo[indice1];
+  indice1++;
+
+  if(indice1 < textoTitulo.length){
+
+    setTimeout(mostrarTitulo, 200);
+  } 
+}
+
+function mostrarParrafo(){
+
+  
+    parrafo.textContent += textoParrafo[indice2];
+    indice2++;
+
+    if(indice2 < textoParrafo.length){
+
+        setTimeout(mostrarParrafo,30);
+    }
+}
+setTimeout(mostrarTitulo,0);
+setTimeout(mostrarParrafo,1000);
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+//FUNCIONES SINCRONICAS
+
+
 function cargarFacturaIngreso() {
 
     let concepto = document.getElementById("concepto-ingresos");
@@ -125,7 +274,6 @@ function cargarFacturaIngreso() {
     let total = document.getElementById("total-ingresos");
     let irpf = document.getElementById("irpf-ingresos");
     let iva = document.getElementById("iva-ingresos");
-
 
     //guarda todos los datos de los input de factura de ingreso en un arrays
 
@@ -136,7 +284,6 @@ function cargarFacturaIngreso() {
 
     facturaIngreso.sumarATotal()
 
-    //pasamos el arrays a JSON
     let facturaIngresoJson = JSON.stringify(facturaIngreso);
 
     localStorage.setItem("factura ingreso", facturaIngresoJson);
@@ -172,8 +319,7 @@ function cargarFacturaIngreso() {
         timer: 3000,
         timerProgressBar: true,
         didOpen: (toast) => {
-            toast.onmouseenter = stopTimer;
-            toast.onmouseleave = resumeTimer;
+       
         }
     });
     Toast.fire({
@@ -197,14 +343,16 @@ function cargarFacturaGasto() {
     let iva = document.getElementById("iva-gasto");
 
 
-    //guarda todos los datos de los input de factura de ingreso en un arrays
+    //guarda todos los datos de los input de factura de gastos en un arrays
 
 
-    const facturaGasto = new FacturaGasto(concepto.value, fecha.value, irpf.value, total.value, iva.value);
+    const facturaGasto = new FacturaGasto(concepto, fecha, total.value, irpf.value, iva.value);
 
     arrayFacturaGastos.push(facturaGasto);
 
     facturaGasto.sumarATotal();
+  
+
 
     //pasamos el arrays a JSON
     let facturaGastoJson = JSON.stringify(facturaGasto);
@@ -226,10 +374,12 @@ function cargarFacturaGasto() {
     irpf.value = 0, 0;
     iva.value = 0, 0;
 
-    p_total_visual.innerText = "";
-    p_irpf_visual.innerText = "";
-    p_iva_visual.innerText = "";
-    p_total_total_visual.innerText = "";
+    p_total_visual_gasto.innerText = "";
+    p_irpf_visual_gasto.innerText = "";
+    p_iva_visual_gasto.innerText = "";
+    p_total_total_visual_gasto.innerText = "";
+
+
 
     const Toast = Swal.mixin({
         toast: true,
@@ -238,8 +388,7 @@ function cargarFacturaGasto() {
         timer: 3000,
         timerProgressBar: true,
         didOpen: (toast) => {
-            toast.onmouseenter = stopTimer;
-            toast.onmouseleave = resumeTimer;
+          
         }
     });
     Toast.fire({
@@ -266,7 +415,7 @@ function cargarFacturaPersonalizada() {
     //guarda todos los datos de los input de factura de ingreso en un arrays
 
 
-    const facturaPersonalizada = new FacturaPersonalizada(razonSocial.value, dni.value, fecha.value, irpf.value, total.value, iva.value);
+    const facturaPersonalizada = new FacturaPersonalizada(razonSocial, dni, fecha, total.value, irpf.value, iva.value);
 
     arrayFacturaPersonalizada.push(facturaPersonalizada);
 
@@ -277,7 +426,7 @@ function cargarFacturaPersonalizada() {
 
     localStorage.setItem("factura personalizada", facturaPersonalizadaJson);
 
-    console.log(facturaPersonalizada);
+    console.log(arrayFacturaPersonalizada);
 
     //para limpiar los inputs de la factura al darle al boton cargar
 
@@ -289,10 +438,10 @@ function cargarFacturaPersonalizada() {
     irpf.value = 0, 0;
     iva.value = 0, 0;
 
-    p_total_visual.innerText = "";
-    p_irpf_visual.innerText = "";
-    p_iva_visual.innerText = "";
-    p_total_total_visual.innerText = "";
+    p_total_visual_personalizada.innerText = "";
+    p_irpf_visual_personalizada.innerText = "";
+    p_iva_visual_personalizada.innerText = "";
+    p_total_total_visual_personalizada.innerText = "";
 
     const Toast = Swal.mixin({
         toast: true,
@@ -301,24 +450,25 @@ function cargarFacturaPersonalizada() {
         timer: 3000,
         timerProgressBar: true,
         didOpen: (toast) => {
-            toast.onmouseenter = stopTimer;
-            toast.onmouseleave = resumeTimer;
+           
+           
         }
     });
     Toast.fire({
         icon: "success",
         title: "Factura personalizada cargada exitosamente"
     });
-
-
-
-
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//nodos
+
+
+//
+////CREACION DE DOM
+//
+//nodos factura visual seccion 1
 const div = document.createElement("div");
 const div2 = document.createElement("div");
 const div3 = document.createElement("div");
@@ -388,6 +538,231 @@ let p_total_visual_personalizada = document.createElement("span");
 let p_iva_visual_personalizada = document.createElement("span");
 let p_irpf_visual_personalizada = document.createElement("span");
 let p_total_total_visual_personalizada = document.createElement("span");
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//DOM
+
+
+
+//NODOS PARA MOSTRAR LOS DATOS DE USUARIO SECCION 2
+
+const div4 = document.createElement("div");
+const div5 = document.createElement("div");
+const div6 = document.createElement("div");
+const contenedor4 = document.getElementById("dato-usuario");
+const contenedor5 = document.getElementById("dato-financiero");
+const contenedor6 = document.getElementById("dato-facturas");
+
+
+
+//nodos para la creacion de datos personales
+const nombre = document.createElement("span");
+const apellido = document.createElement("span");
+const dni = document.createElement("span");
+const correo = document.createElement("span");
+const password = document.createElement("span");
+
+//nodos para la creacion de datos financieros
+const iva_usuario = document.createElement("span");
+const irpf_usuario = document.createElement("span");
+const total_usuario = document.createElement("span");
+const totalBruto_usuario = document.createElement("span");
+const gasto_usuario = document.createElement("span");
+
+//nodos para la creacion de datos de facturas
+
+const factura_ingreso_usuario = document.createElement("span");
+const factura_gasto_usuario = document.createElement("span");
+const factura_personalizadas_usuario = document.createElement("span");
+
+
+
+
+
+//llamamos al Usuario en localStorage
+
+const usuarioJson = localStorage.getItem("Usuario");
+
+const usuario = JSON.parse(usuarioJson);
+
+
+
+if (usuario.login === true) {
+
+    nombre.innerText = usuario.nombre;
+
+    const spannombre = document.getElementById("nombre_usuario");
+
+    spannombre.appendChild(nombre);
+
+
+    apellido.innerText = usuario.apellido;
+
+    const spanApellido = document.getElementById("apellido_usuario");
+
+    spanApellido.appendChild(apellido);
+
+    dni.innerText = usuario.dni;
+
+    const spanDni = document.getElementById("dni_usuario");
+
+    spanDni.appendChild(dni);
+
+    correo.innerText = usuario.correo;
+
+    const spanCorreo = document.getElementById("correo_usuario");
+
+    spanCorreo.appendChild(correo);
+
+
+
+
+
+
+
+
+
+    div4.className = "dato-usuario";
+    div4.innerHTML = `
+
+       <span id="nombre_usuario" class="text-span"></span>
+       <span id="apellido_usuario" class="text-span"></span>
+       <span id="dni_usuario" class="text-span"></span>
+      <span id="correo_usuario" class="text-span"></span>
+      `;
+
+    contenedor4.appendChild(div4);
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // DATOS FINANCIEROS 
+
+
+    //nodos para la creacion de datos financieros
+
+
+
+    //iva
+    iva_usuario.innerText = usuario.totalIva + "$";
+
+    const span_iva_usuario = document.getElementById("iva_usuario");
+
+    span_iva_usuario.appendChild(iva_usuario);
+
+
+    //irpf
+    irpf_usuario.innerText = usuario.totalIrpf + "$";
+
+    const span_irpf_usuario = document.getElementById("irpf_usuario");
+
+    span_irpf_usuario.appendChild(irpf_usuario);
+
+
+    //total deduciones
+    totalBruto_usuario.innerText = usuario.totalIngresoBruto + "$";
+
+    const span_totalBruto_usuario = document.getElementById("totalDeucciones_usuario");
+
+    span_totalBruto_usuario.appendChild(totalBruto_usuario);
+
+
+    //total bruto
+    total_usuario.innerText = usuario.totalIngreso + "$";
+
+    const span_total_usuario = document.getElementById("totalBruto_usuario");
+
+    span_total_usuario.appendChild(total_usuario);
+
+
+    //gasto
+    gasto_usuario.innerText = usuario.gastos + "$";
+
+    const span_gasto_usuario = document.getElementById("gasto_usuario");
+
+    span_gasto_usuario.appendChild(gasto_usuario)
+
+
+
+
+
+
+
+    div5.className = "dato-financiero";
+
+    div5.innerHTML = `
+      
+      <span  id="iva_usuario" class="iva_usuario"></span>
+      <span id="irpf_usuario" class="irpf_usuario"></span>
+      <span id="totalBruto_usuario" class="totalBruto_usuario"></span>
+      <span id="totalDeucciones_usuario" class="totalDeucciones_usuario"></span>
+      <span id="gasto_usuario" class="gasto_usuario"></span>
+      
+      `;
+
+      contenedor5.appendChild(div5);
+
+    
+
+    console.log(usuario.totalIva);
+    console.log(usuario.totalIrpf);
+    console.log(usuario.totalIngresoBruto);
+
+
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // DATOS FINANCIEROS 
+
+
+
+    factura_ingreso_usuario.innerText = usuario.facturasIngresos;
+    const span_factura_ingreso = document.getElementById("usuario_factura_ingreso");
+    span_factura_ingreso.appendChild(factura_ingreso_usuario)
+
+
+    factura_gasto_usuario.innerText= usuario.facturasGastos;
+    const span_factura_gasto = document.getElementById("usuario_factura_gasto");
+    span_factura_gasto.appendChild(factura_gasto_usuario);
+
+    factura_personalizadas_usuario.innerText = usuario.facturasPersonalizadas;
+    const span_factura_personalizada = document.getElementById("usuario_factura_personalizada");
+    span_factura_personalizada.appendChild(factura_personalizadas_usuario);
+
+    div6.className="dato-factura-visual";
+    div6.innerHTML=`
+    
+    <span id="usuario_factura_gasto" class="usuario_factura_gasto"></span>
+    <span id="usuario_factura_ingreso" class="usuario_factura_ingreso"></span>
+    <span id="usuario_factura_personalizada" class="usuario_factura_personalizada">
+    
+    `;
+
+    
+
+
+
+
+
+}//llave de cierre del if
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -561,7 +936,7 @@ inicioUsuario.addEventListener("click", () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                
+
                 Swal.fire({
                     title: "Sesion finalizada",
                     text: "Te esperamos pronto",
@@ -572,10 +947,10 @@ inicioUsuario.addEventListener("click", () => {
 
                 let usuarioJson = JSON.stringify(usuario);
 
-                    localStorage.setItem("Usuario", usuarioJson);
+                localStorage.setItem("Usuario", usuarioJson);
                 console.log(usuario)
 
-                
+
             }
         });
     }//else
@@ -583,6 +958,31 @@ inicioUsuario.addEventListener("click", () => {
 
 })//llave evento
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //eventos input para que aparezca la factura en tiempo real
 
@@ -646,7 +1046,7 @@ total.addEventListener("input", () => {
 
 
     spanTotalTotal.appendChild(p_total_total_visual);
-    console.log("el total total es: " + p_total_total_visual.value);
+
 
 
 })

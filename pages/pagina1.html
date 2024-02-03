@@ -79,10 +79,10 @@
         </div>
         <div class="h-col2">
 
-            <h1>
-                <img class="tamaño50-logo" src="../img/favicon/favicon120-oscuro.png" alt="">ESTOREATE
+            <h1 id="tituloHeader">
+                
             </h1>
-            <p>El software gratuito que pondra en alza tus finanzas</p>
+            <p id="parrafoHeader"></p>
             <div>
                 <button type="button" class="btn btn-light">Comenzar</button>
             </div>
@@ -90,7 +90,10 @@
 
         </div>
         <div class="h-col3">
-            <h2>header-col3</h2>
+            <h2>Monedas Actuales</h2>
+            <div id="precioDolar"></div>
+           
+
         </div>
     </header>
 
@@ -444,16 +447,13 @@
                 </div>
 
 
-                <div class="dato-usuario">
+                <div class="dato-usuario" id="dato-usuario">
 
 
-                    <p>NOMBRE:</p>
-                    <p>APELLIDO:</p>
-                    <p>DNI:</p>
-                    <p>CORREO ELECTRONICO:</p>
-                    <p>FECHA DE NACIMINETO:</p>
-                    <p>TELEFONO:</p>
-                    <p>DIRECCION:</p>
+                    <p class="nombre-grid">NOMBRE: <span id="nombre_usuario" class="text-span"></span></p>
+                    <p class="apellido-grid">APELLIDO: <span id="apellido_usuario" class="text-span"></span></p>
+                    <p class="dni-grid">DNI: <span id="dni_usuario" class="text-span"></span></p>
+                    <p class="correo-grid">CORREO ELECTRONICO: <span id="correo_usuario" class="text-span"></span></p>
 
 
                 </div>
@@ -469,12 +469,13 @@
                     <h3>datos Fincancieros</h3>
                 </div>
 
-                <div class="dato-factura">
+                <div class="dato-factura" id="dato-financiero">
 
-                    <p class="justify-start">I.V.A DEUDOR:</p>
-                    <P>I.R.P.F DEUDOR:</P>
-                    <p>Total bruto:</p>
-                    <p>Total con deducciones</p>
+                    <p id="totalBruto_grid">Total bruto: <span id="totalBruto_usuario" class="totalBruto_usuario"></span></p>
+                    <p id="iva_grid">I.V.A DEUDOR: <span  id="iva_usuario" class="iva_usuario"></span></p> 
+                    <P id="irpf_grid">I.R.P.F DEUDOR: <span id="irpf_usuario" class="irpf_usuario"></span></P>
+                    <p id="totalDeducciones_grid">Total con deducciones <span id="totalDeucciones_usuario" class="totalDeucciones_usuario"></span></p>
+                    <p id="gasto_grid">Gastos total: <span id="gasto_usuario" class="gasto_usuario"></span></p>
                 </div>
 
 
@@ -482,12 +483,12 @@
                     <h3>facturas</h3>
                 </div>
 
-                <div class="dato-factura-visual">
+                <div class="dato-factura-visual" id="dato-facturas">
 
-                    <p>facturas de gastos</p>
-                    <p>facturas de ingreso</p>
-                    <p>facturas personalizadas</p>
-                    <div></div>
+                    <p id="gasto_grid">Facturas de gastos: <span id="usuario_factura_gasto" class="usuario_factura_gasto"></span></p>
+                    <p id="ingreso_grid">Facturas de ingreso: <span id="usuario_factura_ingreso" class="usuario_factura_ingreso"></span></p>
+                    <p id="personalizada_grid">Facturas personalizadas: <span id="usuario_factura_personalizada" class="usuario_factura_personalizada"></span></p>
+                   
 
                 </div>
 
