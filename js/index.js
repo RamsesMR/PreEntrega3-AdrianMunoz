@@ -582,15 +582,16 @@ const factura_gasto_usuario = document.createElement("span");
 const factura_personalizadas_usuario = document.createElement("span");
 
 
+//variable usuario creada para almacenar get localstorage
 
-
+let usuario;
 
 //llamamos al Usuario en localStorage
 if(localStorage.getItem("Usuario") !== null){
 
     const usuarioJson = localStorage.getItem("Usuario");
     
-    const usuario = JSON.parse(usuarioJson);
+     usuario = JSON.parse(usuarioJson);
     
     
     
