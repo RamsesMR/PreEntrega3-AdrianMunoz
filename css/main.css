@@ -623,6 +623,11 @@ footer #div-title-3 {
   color: red;
 }
 
+.precioDolar p {
+  font-size: 20px;
+  color: red;
+}
+
 * {
   padding: 0;
   margin: 0;
